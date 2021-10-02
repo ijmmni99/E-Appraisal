@@ -1,0 +1,613 @@
+﻿@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+    <div id="Section 1" style="overflow-y:scroll;position:relative;width:100%" class="tabcontent">
+        <h4>SECTION 1 : BEHAVIOURAL PERFORMANCE CRITERIA (HOW)</h4>
+        <input class="btn btn-default" type="button" name="btn_hdnall" id="btn_hdnall" value="Show All Factor">   <input class="btn btn-default" type="button" name="btn_hdn1" id="btn_hdn1" value="Factor 1"><input class="btn btn-default" type="button" name="btn_hdn2" id="btn_hdn2" value="Factor 2"><input class="btn btn-default" type="button" name="btn_hdn3" id="btn_hdn3" value="Factor 3"><input class="btn btn-default" type="button" name="btn_hdn4" id="btn_hdn4" value="Factor 4"><input class="btn btn-default" type="button" name="btn_hdn5" id="btn_hdn5" value="Factor 5"><input class="btn btn-default" type="button" name="btn_hdn6" id="btn_hdn6" value="Factor 6"><input class="btn btn-default" type="button" name="btn_hdn7" id="btn_hdn7" value="Factor 7"><input style="position:absolute;right:20px;top:30px;width:70px" class="btn btn-primary" type="button" id="btnSaveSec1" value="Save" />
+        <form>
+            <table id="tab_sec1" width="100%" cellpadding="10" cellspacing="10" border="0" style="border-top:ridge">
+                <thead>
+                    <tr style="background-color: #CCE4DB;">
+                        <th style="width:170px">FACTOR</th>
+                        <th>EVALUATION CRITERIA</th>
+                        <th><label style="border:ridge;padding-left:5px;padding-right:5px; border-color:deepskyblue">EMP</label></th>
+                        <th><label style="border:ridge;padding-left:5px;padding-right:5px; border-color:yellow">MANAGER</label></th>
+                    </tr>
+                </thead>
+                @{
+                    <tbody>
+                        <tr class="hdn1">
+                            <td style="text-align:center;border-right:ridge"><label id="Factor1">1. QUALITY AND STANDARDS OF WORK</label></td>
+                            <td>1. Need Improvement . Work is often inaccurate, poorly organised or unfinished, needing regular supervision. There is a constant need for followup.</td>
+                            <td><input id="option11" name="option1" type="radio" value="1" /></td>
+                            <td><input id="option11_man" name="option1_man" type="radio" value="1" /></td>
+                        </tr>
+                        <tr class="hdn1">
+                            <td style="border-right:ridge"></td>
+                            <td>2. Occassionally Below Requirement : Tasks ocassionally require re-working and need for further checking . More or better could be achieved with a little additional effort.</td>
+                            <td><input id="option12" name="option1" type="radio" value="2" /></td>
+                            <td><input id="option12_man" name="option1_man" type="radio" value="2" /></td>
+                        </tr>
+                        <tr class="hdn1">
+                            <td style="border-right:ridge"></td>
+                            <td>3. Meets Requirement - Meets targets and objectives. Completed tasks are well presented, accurate and to an acceptable standard.</td>
+                            <td><input id="option13" name="option1" type="radio" value="3" /></td>
+                            <td><input id="option13_man" name="option1_man" type="radio" value="3" /></td>
+                        </tr>
+                        <tr class="hdn1">
+                            <td style="border-right:ridge"></td>
+                            <td>4. Occassionally Exceeds Requirement - Work produced is always of an acceptable standard and at times exceeds what is required either in standard or quality.</td>
+                            <td><input id="option14" name="option1" type="radio" value="4" /></td>
+                            <td><input id="option14_man" name="option1_man" type="radio" value="4" /></td>
+                        </tr>
+                        <tr class="hdn1">
+                            <td style="border-right:ridge"></td>
+                            <td>5. Exceeds Requirement - The quality and standard of the work consistently exceeds the requirement of the job.</td>
+                            <td><input id="option15" value="5" name="option1" type="radio" /></td>
+                            <td><input id="option15_man" value="5" name="option1_man" type="radio" /></td>
+                        </tr>
+                        <tr class="hdn1" style="border-top:ridge">
+                            <td>Examples and Comments supporting the evaluation :</td>
+                            <td colspan="2"><textarea class="form-control" name="input_example1" style="width:100%;text-align:left" type="text"></textarea></td>
+                            <td>Agreed Score : <b><span id="total1"></span></b></td>
+                        </tr>
+                        <tr class="hdn1">
+                            <td>Actions for improvement:</td>
+                            <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action1" type="text"></textarea></td>
+                        </tr>
+
+                        <tr class="hdn2" style="border-top:ridge;">
+                            <td style="text-align:center;border-right:ridge"><label id="Factor2">2. WORK PLANNING AND EFFICIENCY (PRODUCTIVITY)</label></td>
+                            <td>1. Need Improvement . Work is oftern behind schedule. Needs help to complete tasks on time and has difficulty coping with workload.</td>
+                            <td><input id="option21" name="option2" type="radio" value="1" /></td>
+                            <td><input id="option21_man" name="option2_man" type="radio" value="1" /></td>
+                        </tr>
+                        <tr class="hdn2">
+                            <td style="border-right:ridge"></td>
+                            <td>2. Occassionally Below Requirement : Occasionally falls behind in meeting targets and objectives. Needs prompting to complete tasks on time.</td>
+                            <td><input id="option22" name="option2" type="radio" value="2" /></td>
+                            <td><input id="option22_man" name="option2_man" type="radio" value="2" /></td>
+                        </tr>
+                        <tr class="hdn2">
+                            <td style="border-right:ridge"></td>
+                            <td>3. Meets Requirement - Meet work deadlines, managers required workload and follows established practices and procedures.</td>
+                            <td><input id="option23" name="option2" type="radio" value="3" /></td>
+                            <td><input id="option23_man" name="option2_man" type="radio" value="3" /></td>
+                        </tr>
+                        <tr class="hdn2">
+                            <td style="border-right:ridge"></td>
+                            <td>4. Occassionally Exceeds Requirement - Consistently meets deadlines and completes tasks and at times works to complete work requirement ahead of schedule.</td>
+                            <td><input id="option24" name="option2" type="radio" value="4" /></td>
+                            <td><input id="option24_man" name="option2_man" type="radio" value="4" /></td>
+                        </tr>
+                        <tr class="hdn2">
+                            <td style="border-right:ridge"></td>
+                            <td>5. Exceeds Requirement -  Continuously seeks additional work or new challenges. Frequently exceeds deadlines and targets, and manages a volume of work exceeding expectations.</td>
+                            <td><input id="option25" name="option2" type="radio" value="5" /></td>
+                            <td><input id="option25_man" name="option2_man" type="radio" value="5" /></td>
+                        </tr>
+                        <tr class="hdn2" style="border-top:ridge">
+                            <td>Examples and Comments supporting the evaluation :</td>
+                            <td colspan="2"><textarea class="form-control" name="input_example2" style="width:100%;text-align:left" type="text"></textarea></td>
+                            <td>Agreed Score : <b><span id="total2"></span></b></td>
+                        </tr>
+                        <tr class="hdn2">
+                            <td>Actions for improvement :</td>
+                            <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action2" type="text"></textarea></td>
+                        </tr>
+
+                        <tr class="hdn3" style="border-top:ridge;">
+                            <td style="text-align:center;border-right:ridge"><label id="Factor3">3. TEAMWORK AND CO-OPERATION</label></td>
+                            <td>1. Need Improvement . Displays little interest in helping others, disputes decisions and is not an effective team member.</td>
+                            <td><input id="option31" name="option3" type="radio" value="1" /></td>
+                            <td><input id="option31_man" name="option3_man" type="radio" value="1" /></td>
+                        </tr>
+                        <tr class="hdn3">
+                            <td style="border-right:ridge"></td>
+                            <td>2. Occassionally Below Requirement : On occassions create tension among team members and does not consistently balance individual and team needs.</td>
+                            <td><input id="option32" name="option3" type="radio" value="2" /></td>
+                            <td><input id="option32_man" name="option3_man" type="radio" value="2" /></td>
+                        </tr>
+                        <tr class="hdn3">
+                            <td style="border-right:ridge"></td>
+                            <td>3. Meets Requirement - Is a team member, gaining trust and respect from others. Evenly balances individual and team needs.</td>
+                            <td><input id="option33" name="option3" type="radio" value="3" /></td>
+                            <td><input id="option33_man" name="option3_man" type="radio" value="3" /></td>
+                        </tr>
+                        <tr class="hdn3">
+                            <td style="border-right:ridge"></td>
+                            <td>4. Occassionally Exceeds Requirement - Works well within the team and at times will provide extra guidance or support to others.  Places team agenda before personal agenda.</td>
+                            <td><input id="option34" name="option3" type="radio" value="4" /></td>
+                            <td><input id="option34_man" name="option3_man" type="radio" value="4" /></td>
+                        </tr>
+                        <tr class="hdn3">
+                            <td style="border-right:ridge"></td>
+                            <td>5. Exceeds Requirement -  Goes out of way to be helpful, has a very high level of respect and trust from work team. Considers a "team" to be the whole of the organisation rather than just a workgroup.</td>
+                            <td><input id="option35" name="option3" type="radio" value="5" /></td>
+                            <td><input id="option35_man" name="option3_man" type="radio" value="5" /></td>
+                        </tr>
+                        <tr class="hdn3" style="border-top:ridge">
+                            <td>Examples and Comments supporting the evaluation :</td>
+                            <td colspan="2"><textarea class="form-control" name="input_example3" style="width:100%;text-align:left" type="text"></textarea></td>
+                            <td>Agreed Score : <b><span id="total3"></span></b></td>
+                        </tr>
+                        <tr class="hdn3">
+                            <td>Actions for improvement :</td>
+                            <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action3" type="text"></textarea></td>
+                        </tr>
+
+                        <tr class="hdn4" style="border-top:ridge;">
+                            <td style="text-align:center;border-right:ridge"><label id="Factor4">4. COMMUNICATION AND INTERPERSONAL RELATIONSHIPS</label></td>
+                            <td>1. Need Improvement . Does not display good communication and interpersonal skills. Does not understand social and interpersonal norms.  Does not communicate adequately to complete the task.</td>
+                            <td><input id="option41" name="option4" type="radio" value="1" /></td>
+                            <td><input id="option41_man" name="option4_man" type="radio" value="1" /></td>
+                        </tr>
+                        <tr class="hdn4">
+                            <td style="border-right:ridge"></td>
+                            <td>2. Occassionally Below Requirement : Communication and interpersonal skill occasionally not sufficient to complete tasks, as they should be done.</td>
+                            <td><input id="option42" name="option4" type="radio" value="2" /></td>
+                            <td><input id="option42_man" name="option4_man" type="radio" value="2" /></td>
+                        </tr>
+                        <tr class="hdn4">
+                            <td style="border-right:ridge"></td>
+                            <td>3. Meets Requirement - Can communicate effectively with others.  Able to discribe or explain a situation, as well as respond to request for information. Shares information openly and honestly.</td>
+                            <td><input id="option43" name="option4" type="radio" value="3" /></td>
+                            <td><input id="option43_man" name="option4_man" type="radio" value="3" /></td>
+                        </tr>
+                        <tr class="hdn4">
+                            <td style="border-right:ridge"></td>
+                            <td>4. Occassionally Exceeds Requirement - Communicates very clearly with others.  Asks open-ended questions to draw out the thought of others in an effort to better understanding.  Responds to questions by providing clear and accurate information.  Understands the impact of messages on others.</td>
+                            <td><input id="option44" name="option4" type="radio" value="4" /></td>
+                            <td><input id="option44_man" name="option4_man" type="radio" value="4" /></td>
+                        </tr>
+                        <tr class="hdn4">
+                            <td style="border-right:ridge"></td>
+                            <td>5. Exceeds Requirement - Possesses excellent communication and interpersonal skills across all level of the organisation.  Anticipates and plans for the reactions of others and tailors the communication approach to the needs of others .  Communicates complex ideas in a simple and persuasive manner.</td>
+                            <td><input id="option45" name="option4" type="radio" value="5" /></td>
+                            <td><input id="option45_man" name="option4_man" type="radio" value="5" /></td>
+                        </tr>
+                        <tr class="hdn4" style="border-top:ridge">
+                            <td>Examples and Comments supporting the evaluation :</td>
+                            <td colspan="2"><textarea class="form-control" name="input_example4" style="width:100%;text-align:left" type="text"></textarea></td>
+                            <td>Agreed Score : <b><span id="total4"></span></b></td>
+                        </tr>
+                        <tr class="hdn4">
+                            <td>Actions for improvement :</td>
+                            <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action4" type="text"></textarea> </td>
+                        </tr>
+
+                        <tr class="hdn5" style="border-top:ridge;">
+                            <td style="text-align:center;border-right:ridge"><label id="Factor5">5. INTERNAL AND EXTERNAL CUSTOMER SERVICE</label></td>
+                            <td>1. Need Improvement . Commitment and responsiveness to customers in need of significant improvement.</td>
+                            <td><input id="option51" name="option5" type="radio" value="1" /></td>
+                            <td><input id="option51_man" name="option5_man" type="radio" value="1" /></td>
+                        </tr>
+                        <tr class="hdn5">
+                            <td style="border-right:ridge"></td>
+                            <td>2. Occassionally Below Requirement : Sometimes displays a negative approach in dealing with customers and could be more helpful, for example provides the minimum required service.  Gives an immediate "off the cuff" response to customer's questions without probing for underlying needs or problems or getting the context of the customer's enquiry.</td>
+                            <td><input id="option52" name="option5" type="radio" value="2" /></td>
+                            <td><input id="option52_man" name="option5_man" type="radio" value="2" /></td>
+                        </tr>
+                        <tr class="hdn5">
+                            <td style="border-right:ridge"></td>
+                            <td>3. Meets Requirement - Provides effective service to customers and positive image to internal and external customers. Able to followup through on customer requests, inquiries or complaints . Keeps customers up-to-date about the progress of projects.</td>
+                            <td><input id="option53" name="option5" type="radio" value="3" /></td>
+                            <td><input id="option53_man" name="option5_man" type="radio" value="3" /></td>
+                        </tr>
+                        <tr class="hdn5">
+                            <td style="border-right:ridge"></td>
+                            <td>4. Occassionally Exceeds Requirement -Very responsive to internal and external customer needs and works to enchance the image of Camfil.</td>
+                            <td><input id="option54" name="option5" type="radio" value="4" /></td>
+                            <td><input id="option54_man" name="option5_man" type="radio" value="4" /></td>
+                        </tr>
+                        <tr class="hdn5">
+                            <td style="border-right:ridge"></td>
+                            <td>5. Exceeds Requirement -  Demostrates total commitment to excellence in customer service. Takes personal responsibility for customer satisfaction.  Corrects customer service problems promptly and non-defensively.</td>
+                            <td><input id="option55" name="option5" type="radio" value="5" /></td>
+                            <td><input id="option55_man" name="option5_man" type="radio" value="5" /></td>
+                        </tr>
+                        <tr class="hdn5" style="border-top:ridge">
+                            <td>Examples and Comments supporting the evaluation :</td>
+                            <td colspan="2"><textarea class="form-control" name="input_example5" style="width:100%;text-align:left" type="text"></textarea></td>
+                            <td>Agreed Score : <b><span id="total5"></span></b></td>
+                        </tr>
+                        <tr class="hdn5">
+                            <td>Actions for improvement :</td>
+                            <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action5" type="text"></textarea></td>
+                        </tr>
+
+                        <tr class="hdn6" style="border-top:ridge;">
+                            <td style="text-align:center;border-right:ridge"><label id="Factor6">6. INITIATIVE AND RESOURCEFULNESS</label></td>
+                            <td>1. Need Improvement . Performs tasks only as required.  Needs regular supervision and displays little interest in improving work methods or output.</td>
+                            <td><input id="option61" name="option6" type="radio" value="1" /></td>
+                            <td><input id="option61_man" name="option6_man" type="radio" value="1" /></td>
+                        </tr>
+                        <tr class="hdn6">
+                            <td style="border-right:ridge"></td>
+                            <td>2. Occassionally Below Requirement : Need more regular supervision, does not contributes to new ideas. Often relies on other for assistance.</td>
+                            <td><input id="option62" name="option6" type="radio" value="2" /></td>
+                            <td><input id="option62_man" name="option6_man" type="radio" value="2" /></td>
+                        </tr>
+                        <tr class="hdn6">
+                            <td style="border-right:ridge"></td>
+                            <td>3. Meets Requirement - Display initiative making work improvements or suggestions to the benefits of the team and / or company.</td>
+                            <td><input id="option63" name="option6" type="radio" value="3" /></td>
+                            <td><input id="option63_man" name="option6_man" type="radio" value="3" /></td>
+                        </tr>
+                        <tr class="hdn6">
+                            <td style="border-right:ridge"></td>
+                            <td>4. Occassionally Exceeds Requirement - Demonstrates a good level of intiative in daily work activities and at times 'thinks outside the box' to make improvements.</td>
+                            <td><input id="option64" name="option6" type="radio" value="4" /></td>
+                            <td><input id="option64_man" name="option6_man" type="radio" value="4" /></td>
+                        </tr>
+                        <tr class="hdn6">
+                            <td style="border-right:ridge"></td>
+                            <td>5. Exceeds Requirement -  Consistenly displays intiative , frequently finds innovative ways of achieving results.</td>
+                            <td><input id="option65" name="option6" type="radio" value="5" /></td>
+                            <td><input id="option65_man" name="option6_man" type="radio" value="5" /></td>
+                        </tr>
+                        <tr class="hdn6" style="border-top:ridge">
+                            <td>Examples and Comments supporting the evaluation :</td>
+                            <td colspan="2"><textarea class="form-control" name="input_example6" style="width:100%;text-align:left" type="text"></textarea></td>
+                            <td>Agreed Score : <b><span id="total6"></span></b></td>
+                        </tr>
+                        <tr class="hdn6">
+                            <td>Actions for improvement :</td>
+                            <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action6" type="text"></textarea></td>
+                        </tr>
+
+                        <tr class="hdn7" style="border-top:ridge;">
+                            <td style="text-align:center;border-right:ridge"><label id="Factor7">7. LEADERSHIP (PEOPLE, ORGANIZATIONAL AND THOUGHT LEADERSHIP)</label></td>
+                            <td>1. Need Improvement . Does not delegate responsibility or support employees in achieving their objectives. Criticise and lays blame when mistakes are made. Does not provide positive or corrective feedback. Does not lead by example or motivate others to take action. Frequently does not achieve results with or through others.</td>
+                            <td><input id="option71" name="option7" type="radio" value="1" /></td>
+                            <td><input id="option71_man" name="option7_man" type="radio" value="1" /></td>
+                        </tr>
+                        <tr class="hdn7">
+                            <td style="border-right:ridge"></td>
+                            <td>2. Occassionally Below Requirement : Leadership skills are occasionally not sufficient to ensure that the team is achieving results.   Occasionally does not promote or provide cooperation.  Usually achieves results with or through others . Sometimes neglects supervisory responsibilities.</td>
+                            <td><input id="option72" name="option7" type="radio" value="2" /></td>
+                            <td><input id="option72_man" name="option7_man" type="radio" value="2" /></td>
+                        </tr>
+                        <tr class="hdn7">
+                            <td style="border-right:ridge"></td>
+                            <td>3. Meets Requirement - Consistently promotes and provides cooperation. Regularly achieves results with and/ or through others.  Threats employees fairly. Regularly attends to supervisory responsibilities. Encourages appropriate standards.</td>
+                            <td><input id="option73" name="option7" type="radio" value="3" /></td>
+                            <td><input id="option73_man" name="option7_man" type="radio" value="3" /></td>
+                        </tr>
+                        <tr class="hdn7">
+                            <td style="border-right:ridge"></td>
+                            <td>4. Occassionally Exceeds Requirement - Consistently display effective leadership skills.  At times excels at motivating oter to achieve.</td>
+                            <td><input id="option74" name="option7" type="radio" value="4" /></td>
+                            <td><input id="option74_man" name="option7_man" type="radio" value="4" /></td>
+                        </tr>
+                        <tr class="hdn7">
+                            <td style="border-right:ridge"></td>
+                            <td>5. Exceeds Requirement - Consistently exceeds expectations.  Frequently energises others and gains commitment. Is consistently viewed as a role model among peers and sets a standard for others to follow.  Adopts an approach that is open and engaging.  Constantly adjusts approach to improve employee performance.</td>
+                            <td><input id="option75" name="option7" type="radio" value="5" /></td>
+                            <td><input id="option75_man" name="option7_man" type="radio" value="5" /></td>
+                        </tr>
+                        <tr class="hdn7" style="border-top:ridge">
+                            <td>Examples and Comments supporting the evaluation :</td>
+                            <td colspan="2"><textarea class="form-control" name="input_example7" style="width:100%;text-align:left" type="text"></textarea></td>
+                            <td>Agreed Score : <b><span id="total7"></span></b></td>
+                        </tr>
+                        <tr class="hdn7">
+                            <td>Actions for improvement :</td>
+                            <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action7" type="text"></textarea></td>
+                        </tr>
+
+                    </tbody>
+                }
+                <tfoot></tfoot>
+            </table>
+            <br />
+        </form>
+    </div>
+ }
+ else
+{
+   <div id="Section 1" style="overflow-y:scroll;position:relative;" class="tabcontent">
+                            <h4>BAHAGIAN 1: KRITERIA PRESTASI TINGKAH LAKU (BAGAIMANA)</h4>
+                            <input class="btn btn-default" type="button" name="btn_hdnall" id="btn_hdnall" value="Lihat Semua Faktor">   <input class="btn btn-default" type="button" name="btn_hdn1" id="btn_hdn1" value="Faktor 1"><input class="btn btn-default" type="button" name="btn_hdn2" id="btn_hdn2" value="Faktor 2"><input class="btn btn-default" type="button" name="btn_hdn3" id="btn_hdn3" value="Faktor 3"><input class="btn btn-default" type="button" name="btn_hdn4" id="btn_hdn4" value="Faktor 4"><input class="btn btn-default" type="button" name="btn_hdn5" id="btn_hdn5" value="Faktor 5"><input class="btn btn-default" type="button" name="btn_hdn6" id="btn_hdn6" value="Faktor 6"><input class="btn btn-default" type="button" name="btn_hdn7" id="btn_hdn7" value="Faktor 7"><input style="position:absolute;right:20px;top:30px;width:70px" class="btn btn-primary" type="button" id="btnSaveSec1" value="Simpan" />
+                            <form>
+                                <table id="tab_sec1" width="100%" cellpadding="10" cellspacing="10" border="0" style="border-top:ridge">
+                                    <thead>
+                                        <tr style="background-color: #CCE4DB;">
+                                            <th style="width:170px">FAKTOR</th>
+                                            <th>KRITERIA PENILAIAN</th>
+                                            <th><label style="border:ridge;padding-left:5px;padding-right:5px; border-color:deepskyblue">Pekerja</label></th>
+                                            <th><label style="border:ridge;padding-left:5px;padding-right:5px; border-color:yellow">Pengurus</label></th>
+                                        </tr>
+                                    </thead>
+                                    @{
+                                        <tbody>
+                                            <tr class="hdn1">
+                                                <td style="text-align:center;border-right:ridge"><label id="Factor1">1. KUALITI DAN PIAWAIAN KERJA</label></td>
+                                                <td>1. Perlu Penambahbaikan-Kerja sering tidak tepat, kurang teratur atau belum siap dan kerap memerlukan penyeliaan. Memerlukan pengawasan yang berterusan </td>
+                                                <td><input id="option11" name="option1" type="radio" value="1" /></td>
+                                                <td><input id="option11_man" name="option1_man" type="radio" value="1" /></td>
+                                            </tr>
+                                            <tr class="hdn1">
+                                                <td style="border-right:ridge"></td>
+                                                <td>2. Kadang-Kadang dibawah Keperluan-Kadang-kadang memerlukan penambahbaikan dalam tugas dan juga memerlukan pemeriksaan selanjutnya. Dapat melakukan dengan lebih baik jika menambah sedikit usaha lagi.</td>
+                                                <td><input id="option12" name="option1" type="radio" value="2" /></td>
+                                                <td><input id="option12_man" name="option1_man" type="radio" value="2" /></td>
+                                            </tr>
+                                            <tr class="hdn1">
+                                                <td style="border-right:ridge"></td>
+                                                <td>3. Keperluan Dicapai-Objektif dan sasaran dicapai. Tugasan telah diselesai dengan baik serta mengikut piawaian yang telah ditetapkan </td>
+                                                <td><input id="option13" name="option1" type="radio" value="3" /></td>
+                                                <td><input id="option13_man" name="option1_man" type="radio" value="3" /></td>
+                                            </tr>
+                                            <tr class="hdn1">
+                                                <td style="border-right:ridge"></td>
+                                                <td>4. Kadang-Kadang melebihi Keperluan-Kerja yang dihasilkan adalah sentiasa mengikut piawaian yang ditetapkan dan kadang-kadang melebihi apa yang diperlukan sama ada dari segi dalam piawaian ataupun kualiti.  </td>
+                                                <td><input id="option14" name="option1" type="radio" value="4" /></td>
+                                                <td><input id="option14_man" name="option1_man" type="radio" value="4" /></td>
+                                            </tr>
+                                            <tr class="hdn1">
+                                                <td style="border-right:ridge"></td>
+                                                <td>5. Melebihi Keperluan-Kualiti dan Piawaian kerja sentiasa melebihi dengan keperluan kerja.</td>
+                                                <td><input id="option15" value="5" name="option1" type="radio" /></td>
+                                                <td><input id="option15_man" value="5" name="option1_man" type="radio" /></td>
+                                            </tr>
+                                            <tr class="hdn1" style="border-top:ridge">
+                                                <td>Contoh dan Komen untuk menyokong penilaian : </td>
+                                                <td colspan="2"><textarea class="form-control" name="input_example1" style="width:100%;text-align:left" type="text"></textarea></td>
+                                                <td>Markah yang Dipersetujui : <b><span id="total1"></span></b></td>
+                                            </tr>
+                                            <tr class="hdn1">
+                                                <td>Tindakan untuk Penambahbaikan : </td>
+                                                <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action1" type="text"></textarea></td>
+                                            </tr>
+
+                                            <tr class="hdn2" style="border-top:ridge;">
+                                                <td style="text-align:center;border-right:ridge"><label id="Factor2">2. KECEKAPAN DAN PERANCANGAN KERJA (PRODUKTIVITI)</label></td>
+                                                <td>1. Perlu Penambahbaikan-Kerja sering lewat mengikut jadual. Memerlukan bantuan untuk menyiapkan tugasan mengikut tempoh masa dan menghadapi kesukaran untuk mengurus bemban kerja.</td>
+                                                <td><input id="option21" name="option2" type="radio" value="1" /></td>
+                                                <td><input id="option21_man" name="option2_man" type="radio" value="1" /></td>
+                                            </tr>
+                                            <tr class="hdn2">
+                                                <td style="border-right:ridge"></td>
+                                                <td>2. Kadang-Kadang dibawah Keperluan-Kadang-kadang tidak dapat memenuhi sasaran dan objektif. Memerlukan dorong untuk menyelesaikan tugasan mengikut tempoh masa.</td>
+                                                <td><input id="option22" name="option2" type="radio" value="2" /></td>
+                                                <td><input id="option22_man" name="option2_man" type="radio" value="2" /></td>
+                                            </tr>
+                                            <tr class="hdn2">
+                                                <td style="border-right:ridge"></td>
+                                                <td>3. Keperluan Dicapai-Menepati tempoh masa, menguruskan beban kerja dan mengikuti amalan dan prosedur yang diguna pakai. </td>
+                                                <td><input id="option23" name="option2" type="radio" value="3" /></td>
+                                                <td><input id="option23_man" name="option2_man" type="radio" value="3" /></td>
+                                            </tr>
+                                            <tr class="hdn2">
+                                                <td style="border-right:ridge"></td>
+                                                <td>4. Kadang-Kadang melebihi Keperluan-Sentiasa menepati tempoh masa dan melengkapkan tugasan dan kadang-kadang menyiapkan kerja lebih awal daripada jadual yang telah ditetapkan. </td>
+                                                <td><input id="option24" name="option2" type="radio" value="4" /></td>
+                                                <td><input id="option24_man" name="option2_man" type="radio" value="4" /></td>
+                                            </tr>
+                                            <tr class="hdn2">
+                                                <td style="border-right:ridge"></td>
+                                                <td>5. Melebihi Keperluan-Sentiasa mencari kerja tambahan atau cabaran baru. Secara lazimnya, menepati tempoh masa dan sasaran, serta menguruskan jumlah kerja dengan melebihi daripada jangkaan. </td>
+                                                <td><input id="option25" name="option2" type="radio" value="5" /></td>
+                                                <td><input id="option25_man" name="option2_man" type="radio" value="5" /></td>
+                                            </tr>
+                                            <tr class="hdn2" style="border-top:ridge">
+                                                <td>Contoh dan Komen untuk menyokong penilaian : </td>
+                                                <td colspan="2"><textarea class="form-control" name="input_example2" style="width:100%;text-align:left" type="text"></textarea></td>
+                                                <td>Markah yang Dipersetujui :<b><span id="total2"></span></b></td>
+                                            </tr>
+                                            <tr class="hdn2">
+                                                <td>Tindakan untuk Penambahbaikan :</td>
+                                                <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action2" type="text"></textarea></td>
+                                            </tr>
+
+                                            <tr class="hdn3" style="border-top:ridge;">
+                                                <td style="text-align:center;border-right:ridge"><label id="Factor3">3. KERJASAMA DAN KERJA BERPASUKAN </label></td>
+                                                <td>1. Perlu Penambahbaikan-Kurang berminat dalam membantu orang lain, menyelesaikan pertikaian dan tidak efektif sebagai ahli pasukan.</td>
+                                                <td><input id="option31" name="option3" type="radio" value="1" /></td>
+                                                <td><input id="option31_man" name="option3_man" type="radio" value="1" /></td>
+                                            </tr>
+                                            <tr class="hdn3">
+                                                <td style="border-right:ridge"></td>
+                                                <td>2. Kadang-Kadang dibawah Keperluan-Dalam situasi tertentu,wujud ketegangan di kalangan ahli-ahli pasukan dan tidak konsisten dalam mengimbangi keperluan individu dan pasukan.</td>
+                                                <td><input id="option32" name="option3" type="radio" value="2" /></td>
+                                                <td><input id="option32_man" name="option3_man" type="radio" value="2" /></td>
+                                            </tr>
+                                            <tr class="hdn3">
+                                                <td style="border-right:ridge"></td>
+                                                <td>3. Keperluan Dicapai- Ada ahli pasukan yang mendapat kepercayaan dan hormat daripada orang lain. </td>
+                                                <td><input id="option33" name="option3" type="radio" value="3" /></td>
+                                                <td><input id="option33_man" name="option3_man" type="radio" value="3" /></td>
+                                            </tr>
+                                            <tr class="hdn3">
+                                                <td style="border-right:ridge"></td>
+                                                <td>4. Kadang-Kadang melebihi Keperluan-Berfungsi dengan baik dalam pasukan dan pada masa yang sama akan memberi bimbingan atau sokongan kepada orang lain. Mementingkan agenda pasukan berbanding agenda peribadi. </td>
+                                                <td><input id="option34" name="option3" type="radio" value="4" /></td>
+                                                <td><input id="option34_man" name="option3_man" type="radio" value="4" /></td>
+                                            </tr>
+                                            <tr class="hdn3">
+                                                <td style="border-right:ridge"></td>
+                                                <td>5. Melebihi Keperluan-Sentiasa mencari cara untuk membantu, mempunyai tahap hormat dan kepercayaan yang sangat tinggi daripada pasukan kerja. Menganggap pasukan itu mewakili keseluruhan organisasi dan bukannya hanya sebagai kumpulan sahaja. </td>
+                                                <td><input id="option35" name="option3" type="radio" value="5" /></td>
+                                                <td><input id="option35_man" name="option3_man" type="radio" value="5" /></td>
+                                            </tr>
+                                            <tr class="hdn3" style="border-top:ridge">
+                                                <td>Contoh dan Komen untuk menyokong penilaian : </td>
+                                                <td colspan="2"><textarea class="form-control" name="input_example3" style="width:100%;text-align:left" type="text"></textarea></td>
+                                                <td>Markah yang Dipersetujui :<b><span id="total3"></span></b></td>
+                                            </tr>
+                                            <tr class="hdn3">
+                                                <td>Tindakan untuk Penambahbaikan :</td>
+                                                <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action3" type="text"></textarea></td>
+                                            </tr>
+
+                                            <tr class="hdn4" style="border-top:ridge;">
+                                                <td style="text-align:center;border-right:ridge"><label id="Factor4">4. KOMUNIKASI DAN HUBUNGAN INTERPERSONAL</label></td>
+                                                <td>1. Perlu Penambahbaikan-Tidak memaparkan komunikasi dan kemahiran interpersonal yang baik.  Tidak memahami norma-norma sosial dan interpersonal.Tidak berkomunikasi secukupnya untuk menyelesaikan tugas.</td>
+                                                <td><input id="option41" name="option4" type="radio" value="1" /></td>
+                                                <td><input id="option41_man" name="option4_man" type="radio" value="1" /></td>
+                                            </tr>
+                                            <tr class="hdn4">
+                                                <td style="border-right:ridge"></td>
+                                                <td>2. Kadang-Kadang dibawah Keperluan-Komunikasi dan kemahiran interpersonal kadang-kala tidak mencukupi untuk menyelesaikan tugas-tugas dengan sepenuhnya, seperti mana yang diperlukan. </td>
+                                                <td><input id="option42" name="option4" type="radio" value="2" /></td>
+                                                <td><input id="option42_man" name="option4_man" type="radio" value="2" /></td>
+                                            </tr>
+                                            <tr class="hdn4">
+                                                <td style="border-right:ridge"></td>
+                                                <td>3. Keperluan Dicapai-Boleh berkomunikasi secara berkesan dengan orang lain.Dapat menerangkan atau menjelaskan situasi, serta menanya bagi meminta maklumat. Berkongsi maklumat secara terbuka dan jujur.</td>
+                                                <td><input id="option43" name="option4" type="radio" value="3" /></td>
+                                                <td><input id="option43_man" name="option4_man" type="radio" value="3" /></td>
+                                            </tr>
+                                            <tr class="hdn4">
+                                                <td style="border-right:ridge"></td>
+                                                <td>4. Kadang-Kadang melebihi Keperluan-Berkomunikasi dengan jelas dengan orang lain. Menanya soalan-soalan yang terbuka untuk menarik  pemikiran orang lain dalam usaha untuk pemahaman  yang menyeluruh. Responds yang baik kepada soalan-soalan dengan memberikan maklumat yang jelas dan tepat. Memahami kesan sesuatu mesej kepada orang lain.</td>
+                                                <td><input id="option44" name="option4" type="radio" value="4" /></td>
+                                                <td><input id="option44_man" name="option4_man" type="radio" value="4" /></td>
+                                            </tr>
+                                            <tr class="hdn4">
+                                                <td style="border-right:ridge"></td>
+                                                <td>5.  Melebihi Keperluan- Mempunyai komunikasi dan kemahiran interpersonal yang sangat baik di dalam semua peringkat  organisasi. Merancang dan menjangka reaksi orang lain dan menentukan pendekatan komunikasi untuk keperluan orang lain. Berkomunikasi idea yang kompleks dengan cara yang mudah dan meyakinkan.</td>
+                                                <td><input id="option45" name="option4" type="radio" value="5" /></td>
+                                                <td><input id="option45_man" name="option4_man" type="radio" value="5" /></td>
+                                            </tr>
+                                            <tr class="hdn4" style="border-top:ridge">
+                                                <td>Contoh dan Komen untuk menyokong penilaian : </td>
+                                                <td colspan="2"><textarea class="form-control" name="input_example4" style="width:100%;text-align:left" type="text"></textarea></td>
+                                                <td>Markah yang Dipersetujui :<b><span id="total4"></span></b></td>
+                                            </tr>
+                                            <tr class="hdn4">
+                                                <td>Tindakan untuk Penambahbaikan :</td>
+                                                <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action4" type="text"></textarea> </td>
+                                            </tr>
+
+                                            <tr class="hdn5" style="border-top:ridge;">
+                                                <td style="text-align:center;border-right:ridge"><label id="Factor5">5. KHIDMAT PELANGGAN DALAMAN DAN LUARAN</label></td>
+                                                <td>1. Perlu Penambahbaikan-Memerlukan peningkatan yang ketara dalam komitmen dan responsif kepada pelanggan.</td>
+                                                <td><input id="option51" name="option5" type="radio" value="1" /></td>
+                                                <td><input id="option51_man" name="option5_man" type="radio" value="1" /></td>
+                                            </tr>
+                                            <tr class="hdn5">
+                                                <td style="border-right:ridge"></td>
+                                                <td>2. Kadang-Kadang dibawah Keperluan-Kadang-kadang memberikan pendekatan negatif semasa berurusan dengan pelanggan dan boleh menjadi lebih membantu, contohnya menyediakan perkhidmatan minimum.Memberikan respon segera dalam bentuk 'off the cuff' kepada soalan-soalan pelanggan tanpa menyelesaikan sesuatu masalah atau memikirkan konteks keperluan asas terhadap persoalan pelanggan.  </td>
+                                                <td><input id="option52" name="option5" type="radio" value="2" /></td>
+                                                <td><input id="option52_man" name="option5_man" type="radio" value="2" /></td>
+                                            </tr>
+                                            <tr class="hdn5">
+                                                <td style="border-right:ridge"></td>
+                                                <td>3. Keperluan Dicapai-Menyediakan perkhidmatan yang berkesan kepada pelanggan dan imej yang positif bagi pelanggan dalaman dan luaran. Dapat memberikan respons terhadap permintaan pelanggan, pertanyaan dan aduan. Memastikan pelanggan mengemas kini tentang kemajuan projek. </td>
+                                                <td><input id="option53" name="option5" type="radio" value="3" /></td>
+                                                <td><input id="option53_man" name="option5_man" type="radio" value="3" /></td>
+                                            </tr>
+                                            <tr class="hdn5">
+                                                <td style="border-right:ridge"></td>
+                                                <td>4. Kadang-Kadang melebihi Keperluan-Sangat responsif kepada keperluan pelanggan dalaman dan luaran dan berfungsi untuk meningkatkan imej Camfil.</td>
+                                                <td><input id="option54" name="option5" type="radio" value="4" /></td>
+                                                <td><input id="option54_man" name="option5_man" type="radio" value="4" /></td>
+                                            </tr>
+                                            <tr class="hdn5">
+                                                <td style="border-right:ridge"></td>
+                                                <td>5. Melebihi Keperluan- Mempamerkan komitmen sepenuhnya dalam kecemerlangan dalam perkhidmatan pelanggan . Sukarela mengambil tanggungjawab untuk memenuhi kepuasan pelanggan. Membetulkan masalah perkhidmatan pelanggan dengan segera dan bukan membantah.</td>
+                                                <td><input id="option55" name="option5" type="radio" value="5" /></td>
+                                                <td><input id="option55_man" name="option5_man" type="radio" value="5" /></td>
+                                            </tr>
+                                            <tr class="hdn5" style="border-top:ridge">
+                                                <td>Contoh dan Komen untuk menyokong penilaian : </td>
+                                                <td colspan="2"><textarea class="form-control" name="input_example5" style="width:100%;text-align:left" type="text"></textarea></td>
+                                                <td>AMarkah yang Dipersetujui : <b><span id="total5"></span></b></td>
+                                            </tr>
+                                            <tr class="hdn5">
+                                                <td>Tindakan untuk Penambahbaikan :</td>
+                                                <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action5" type="text"></textarea></td>
+                                            </tr>
+
+                                            <tr class="hdn6" style="border-top:ridge;">
+                                                <td style="text-align:center;border-right:ridge"><label id="Factor6">6. INISIATIF DAN SEBAGAI SUMBER MAKLUMAT</label></td>
+                                                <td>1. Perlu Penambahbaikan-Menjalankan tugas yang hanya dikehendaki sahaja. Memerlukan penyeliaan yang berterusan dan dan kurang berminat  dalam meningkatkan kaedah atau pengeluaran kerja.</td>
+                                                <td><input id="option61" name="option6" type="radio" value="1" /></td>
+                                                <td><input id="option61_man" name="option6_man" type="radio" value="1" /></td>
+                                            </tr>
+                                            <tr class="hdn6">
+                                                <td style="border-right:ridge"></td>
+                                                <td>2. Kadang-Kadang dibawah Keperluan-Perlu lebih kawalselia, tidak menyumbang idea-idea baru. Selalunya bergantung kepada bantuan orang lain.</td>
+                                                <td><input id="option62" name="option6" type="radio" value="2" /></td>
+                                                <td><input id="option62_man" name="option6_man" type="radio" value="2" /></td>
+                                            </tr>
+                                            <tr class="hdn6">
+                                                <td style="border-right:ridge"></td>
+                                                <td>3. Keperluan Dicapai- Menunjukkan inisiatif untuk membuat penambahbaikan kerja atau cadangan bagi manfaat pasukan dan/atau syarikat.</td>
+                                                <td><input id="option63" name="option6" type="radio" value="3" /></td>
+                                                <td><input id="option63_man" name="option6_man" type="radio" value="3" /></td>
+                                            </tr>
+                                            <tr class="hdn6">
+                                                <td style="border-right:ridge"></td>
+                                                <td>4. Kadang-Kadang melebihi Keperluan-Menunjukkan tahap inisiatif yang baik dalam aktiviti kerja harian dan ada masa 'berfikir di luar kotak' untuk membuat penambahbaikan.</td>
+                                                <td><input id="option64" name="option6" type="radio" value="4" /></td>
+                                                <td><input id="option64_man" name="option6_man" type="radio" value="4" /></td>
+                                            </tr>
+                                            <tr class="hdn6">
+                                                <td style="border-right:ridge"></td>
+                                                <td>5. Melebihi Keperluan-Sentiasa menunjukkan sifat inisiatif, sering mendapatkan jalan yang inovatif dalam mencapai keputusan.</td>
+                                                <td><input id="option65" name="option6" type="radio" value="5" /></td>
+                                                <td><input id="option65_man" name="option6_man" type="radio" value="5" /></td>
+                                            </tr>
+                                            <tr class="hdn6" style="border-top:ridge">
+                                                <td>Contoh dan Komen untuk menyokong penilaian : </td>
+                                                <td colspan="2"><textarea class="form-control" name="input_example6" style="width:100%;text-align:left" type="text"></textarea></td>
+                                                <td>Markah yang Dipersetujui : <b><span id="total6"></span></b></td>
+                                            </tr>
+                                            <tr class="hdn6">
+                                                <td>Tindakan untuk Penambahbaikan :</td>
+                                                <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action6" type="text"></textarea></td>
+                                            </tr>
+
+                                            <tr class="hdn7" style="border-top:ridge;">
+                                                <td style="text-align:center;border-right:ridge"><label id="Factor7">7. KEPIMPINAN (ORANG, ORGANISASI DAN IDEA KEPIMPINAN)</label></td>
+                                                <td>1. Perlu Penambahbaikan-Tidak mengagihkan tanggungjawab atau menyokong pekerja dalam mencapai objektif mereka. Mengkritik dan menolak kesalahan apabila kesilapan yang berlaku. Tidak menyediakan pembetulan atau maklum balas yang positif. Tidak membawa melalui teladan atau mendorong orang lain untuk mengambil tindakan. Kerap tidak mencapai keputusan dengan atau melalui orang lain.</td>
+                                                <td><input id="option71" name="option7" type="radio" value="1" /></td>
+                                                <td><input id="option71_man" name="option7_man" type="radio" value="1" /></td>
+                                            </tr>
+                                            <tr class="hdn7">
+                                                <td style="border-right:ridge"></td>
+                                                <td>2. Kadang-Kadang dibawah Keperluan- Skil Penyeliaan kadang-kadang tidak memadai dalam memastikan bahawa pasukan itu mencapai keputusan.Kadang-kadang tidak memberikan sokong atau bekerjasama. Kadang-kadang mengabaikan tugas penyeliaan.</td>
+                                                <td><input id="option72" name="option7" type="radio" value="2" /></td>
+                                                <td><input id="option72_man" name="option7_man" type="radio" value="2" /></td>
+                                            </tr>
+                                            <tr class="hdn7">
+                                                <td style="border-right:ridge"></td>
+                                                <td>3. Keperluan Dicapai-Memberi kerjasama dan menggalakkan secara konsisten. Kerap mencapai keputusan dengan sendiri dan/atau melalui orang lain. Melayan pekerja dengan adil. Kerap hadir dengan tanggungjawab  sebagai penyelia. Menggalakkan piawaian yang sesuai. </td>
+                                                <td><input id="option73" name="option7" type="radio" value="3" /></td>
+                                                <td><input id="option73_man" name="option7_man" type="radio" value="3" /></td>
+                                            </tr>
+                                            <tr class="hdn7">
+                                                <td style="border-right:ridge"></td>
+                                                <td>4. Kadang-Kadang melebihi Keperluan-Menunjukkan kemahiran kepimpinan yang berkesan secara konsisten. Cemerlang  dalam motivasi orang lain untuk pencapaian.</td>
+                                                <td><input id="option74" name="option7" type="radio" value="4" /></td>
+                                                <td><input id="option74_man" name="option7_man" type="radio" value="4" /></td>
+                                            </tr>
+                                            <tr class="hdn7">
+                                                <td style="border-right:ridge"></td>
+                                                <td>5. Melebihi Keperluan-Melebihi daripada jangkaan secara konsisten. Lazim meningkatkan motivasi orang lain dan mendapatkan komitmen. Beperanan sebagai contoh terbaik dikalangan rakan-rakan secara konsisten dan menetapkan standard bagi orang lain untuk diikuti. Mengambil pendekatan yang terbuka dan menarik. Sentiasa menyelaraskan pendekatan untuk meningkatkan prestasi pekerja.</td>
+                                                <td><input id="option75" name="option7" type="radio" value="5" /></td>
+                                                <td><input id="option75_man" name="option7_man" type="radio" value="5" /></td>
+                                            </tr>
+                                            <tr class="hdn7" style="border-top:ridge">
+                                                <td>Contoh dan Komen untuk menyokong penilaian :</td>
+                                                <td colspan="2"><textarea class="form-control" name="input_example7" style="width:100%;text-align:left" type="text"></textarea></td>
+                                                <td>Markah yang Dipersetujui :<b><span id="total7"></span></b></td>
+                                            </tr>
+                                            <tr class="hdn7">
+                                                <td>Tindakan untuk Penambahbaikan :</td>
+                                                <td colspan="3"><textarea class="form-control" style="width:100%;text-align:left" name="input_action7" type="text"></textarea></td>
+                                            </tr>
+
+                                        </tbody>
+                                    }
+                                    <tfoot></tfoot>
+                                </table>
+                                <br />
+                            </form>
+                        </div>                     
+}
+
+
+   

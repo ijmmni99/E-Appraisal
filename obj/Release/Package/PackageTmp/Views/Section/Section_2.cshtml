@@ -1,0 +1,190 @@
+﻿@{ 
+    ViewBag.Test = 1;
+}
+<style>.tdd{text-align:center;} input{text-align:center;} .output{border:hidden} .rr{text-align:justify; padding-left:50px}</style>
+
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+
+<div id="Section 2" style="overflow-y:scroll;" class="tabcontent">
+
+    <h4>SECTION 2: PERFORMANCE OBJECTIVES</h4><br />
+    <label style="font-size:16px">This section identifies the outcomes or results achieved by the employee. This may be evaluated and measured against a number of sources, including but not limited to: </label>
+    <h5>1. Objectives set at last year's appraisal <br />2. As detailed in Position Decription <br />3. As directed through the year (e.g. specific project outcomes, monthly sales results, reporting timetables, etc).<br /><br />Instruction: Read the definition for each evaluation (table directly below) and evaluate the employee's performance against each Key Objective.</h5>
+    <table align="center" width="80%" cellpadding="5" border="1">
+        <tr>
+            <th>Evaluation</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td class="tdd">1</td>
+            <td class="tdd">Need improvement(Consistently Below Expectations)-Performance was at a level below the key objective.</td>
+        </tr>
+        <tr>
+            <td class="tdd">2</td>
+            <td class="tdd">Occasionally Below Requirement-The Key objective was usually met but there were some minor shortcomings</td>
+        </tr>
+        <tr>
+            <td class="tdd">3</td>
+            <td class="tdd">Met Requirement- Met the objective in a satisfactory manner. Performance met expected requirement</td>
+        </tr>
+        <tr>
+            <td class="tdd">4</td>
+            <td class="tdd">Occasionally Exceeded Requirement- Performance was competent in relation to the key objective and high</td>
+        </tr>
+        <tr>
+            <td class="tdd">5</td>
+            <td class="tdd">Exceeded Requirement- The employee constantly achieved extremely high performance results and easily</td>
+        </tr>
+    </table>
+    <br />
+    <table id="tblCustomers" class="table" style="text-align:center" width="100%" cellpadding="5">
+        <thead>
+            <tr>
+                <th style="width:50%;">Key Result/Objectives</th>
+                <th>Manager Evaluation</th>
+                <th>Self Evaluation</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var data in Model.EA_Sec3_ly)
+            {
+                <tr>
+                    <td><textarea class="form-control">@data.Objective_sec3</textarea></td>
+                    <td><input name="sec2_man_eval" type="number" value="" class="form-control" /></td>
+                    <td><input name="sec2_emp_eval" type="number" value="" class="form-control" /></td>
+                    <td><input class="btn-danger" type="button" value="Remove" onclick="Remove(this)" /></td>
+                </tr>
+            }
+            @foreach (var data in Model.EA_Sec4_ly)
+            {
+                <tr>
+                    <td><textarea class="form-control">@data.Objective_sec4</textarea></td>
+                    <td><input name="sec2_man_eval" type="number" value="" class="form-control" /></td>
+                    <td><input name="sec2_emp_eval" type="number" value="" class="form-control" /></td>
+                    <td><input class="btn-danger" type="button" value="Remove" onclick="Remove(this)" /></td>
+                </tr>
+            }
+            @foreach (var data in Model.EA_Sec2)
+            {
+                string a = DateTime.Now.Year.ToString();
+                if (data.Years == a)
+                {
+                    <tr>
+                        <td><textarea class="form-control">@data.Objective</textarea></td>
+                        <td><input name="sec2_man_eval" type="number" value="@data.Man_Eval" class="form-control" /></td>
+                        <td><input name="sec2_emp_eval" type="number" value="@data.Emp_Eval" class="form-control" /></td>
+                        <td><input class="btn-danger" type="button" value="Remove" onclick="Remove(this)" /></td>
+                    </tr>
+                }
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td><input class="form-control" type="text" id="txtName" /></td>
+                <td><input name="sec2_man_eval2" class="form-control" type="number" id="txtCountry" /></td>
+                <td><input class="form-control" type="number" id="txtEmp" /></td>
+                <td><input class="btn-success" style="width:70px" type="button" id="btnAdd" value="Add" /></td>
+            </tr>
+        </tfoot>
+    </table>
+    <br />
+    <label style="padding-left:30px">Agreed Score : </label><b><span id="totalsec2"></span></b>
+    <br />
+    <input style="margin-left:92.5%;width:70px" class="btn btn-primary" type="button" id="btnSave" value="Save" />
+
+</div>
+}
+else
+{
+    <div id="Section 2" style="overflow-y:scroll;" class="tabcontent">
+
+        <h4>BAHAGIAN 2: OBJEKTIF PRESTASI</h4><br />
+        <label style="font-size:16px">Bahagian ini akan mengenalpasti hasil atau keputusan yang dicapai oleh pekerja. Ini boleh dinilai dan diukur berdasarkan beberapa sumber, termasuk tetapi tidak terhad kepada : </label>
+        <h5>1. Objektif yang telah ditetapkan dalam Penilaian Prestasi tahun lepas <br />2. Seperti yang diperincikan dalam Deskripsi Kerja(Job Description) <br />3. Seperti yang diarahkan sepanjang tahun (sebagai contohnya hasil projek tertentu, hasil jualan bulanan, jadual laporan, dll). <br /><br />Arahan: Baca definisi bagi setiap penilaian (Jadual di bawah) dan menilai prestasi pekerja berdasarkan setiap Objektif Utama.</h5>
+        <table align="center" width="80%" cellpadding="5" border="1">
+            <tr>
+                <th>Penilaian</th>
+                <th>Deskripsi</th>
+            </tr>
+            <tr>
+                <td class="tdd">1</td>
+                <td class="tdd">Perlu Penambahbaikan(Konsisten dibawah Jangkaan)-Prestasi adalah dibawah daripada keperluan objektif utama. Objektif penting tidak dipenuhi oleh pekerja dengan kelemahan dalam prestasi secara konsisten.</td>
+            </tr>
+            <tr>
+                <td class="tdd">2</td>
+                <td class="tdd">Kadang-Kadang dibawah Keperluan-Objektif Utama biasanya  dicapai tetapi terdapat beberapa kelemahan kecil dalam prestasi.</td>
+            </tr>
+            <tr>
+                <td class="tdd">3</td>
+                <td class="tdd">Keperluan Dicapai- Berjaya mencapai objektif dalam cara yang memuaskan. Prestasi selaras dengan keperluan yang dijangkakan</td>
+            </tr>
+            <tr>
+                <td class="tdd">4</td>
+                <td class="tdd">Kadang-Kadang melebihi Keperluan- Prestasi adalah cekap dengan objektif utama melebihi daripada piawaian yang tinggi </td>
+            </tr>
+            <tr>
+                <td class="tdd">5</td>
+                <td class="tdd">Melebihi Keperluan- Pekerja sentiasa mencapai keputusan prestasi yang sangat tinggi dan mudah mencapai objektif utama.</td>
+            </tr>
+        </table>
+        <br />
+        <table id="tblCustomers" class="table" style="text-align:center" width="100%" cellpadding="5">
+            <thead>
+                <tr>
+                    <th style="width:50%;">Objektif / Hasil Utama</th>
+                    <th>Penilaian Pengurus</th>
+                    <th>Penilaian Pekerja</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model.EA_Sec3_ly)
+                {
+                    <tr>
+                        <td><input type="text" value="@data.Objective_sec3" class="form-control"></td>
+                        <td><input name="sec2_man_eval" type="number" value="" class="form-control" /></td>
+                        <td><input name="sec2_emp_eval" type="number" value="" class="form-control" /></td>
+                        <td><input class="btn-danger" type="button" value="Padam" onclick="Remove(this)" /></td>
+                    </tr>
+                }
+                @foreach (var data in Model.EA_Sec4_ly)
+                {
+                    <tr>
+                        <td><input type="text" value="@data.Objective_sec4" class="form-control"></td>
+                        <td><input name="sec2_man_eval" type="number" value="" class="form-control" /></td>
+                        <td><input name="sec2_emp_eval" type="number" value="" class="form-control" /></td>
+                        <td><input class="btn-danger" type="button" value="Padam" onclick="Remove(this)" /></td>
+                    </tr>
+                }
+                @foreach (var data in Model.EA_Sec2)
+                {
+                    string a = DateTime.Now.Year.ToString();
+                    if (data.Years == a)
+                    {
+                        <tr>
+                            <td><input type="text" value="@data.Objective" class="form-control"></td>
+                            <td><input name="sec2_man_eval" type="number" value="@data.Man_Eval" class="form-control" /></td>
+                            <td><input name="sec2_emp_eval" type="number" value="@data.Emp_Eval" class="form-control" /></td>
+                            <td><input class="btn-danger" type="button" value="Padam" onclick="Remove(this)" /></td>
+                        </tr>
+                    }
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input class="form-control" type="text" id="txtName" /></td>
+                    <td><input name="sec2_man_eval2" class="form-control" type="number" id="txtCountry" /></td>
+                    <td><input class="form-control" type="number" id="txtEmp" /></td>
+                    <td><input class="btn-success" style="width:70px" type="button" id="btnAdd" value="Tambah" /></td>
+                </tr>
+            </tfoot>
+        </table>
+        <br />
+        <label style="padding-left:30px">Markah yang Dipersetujui :</label><b><span id="totalsec2"></span></b>
+        <br />
+        <input style="margin-left:92.5%;width:70px" class="btn btn-primary" type="button" id="btnSave" value="Simpan" />
+
+    </div>
+}

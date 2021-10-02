@@ -1,0 +1,440 @@
+﻿@{  
+    decimal b = 0;
+    decimal c = 0;
+    decimal v = 0;
+    foreach (var dd in Model.EA_Sec2)
+    {
+        if (dd.Man_Eval != null)
+        {
+            c = c + dd.Man_Eval;
+            v = v + 1;
+        }
+    }
+}
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+<div id="Section 6" style="overflow-y:scroll;" class="tabcontent">
+    <h4>SECTION 6: EVALUATION SUMMARY (OVERALL PERFORMANCE)</h4><br />
+    <label style="color:red">Tips : Please refresh the page if Agreed Marks is empty or not changes (Manager)</label>
+    <label>Identify the evaluation which best describes overall performance for both Behavioural Abilities (Section 1) and Performance Objectives (Section 2)</label>
+    <br />
+    <div id="div6">
+        <table style="text-align:center" border="1" cellpadding="5" width="100%">
+            <col width="25%" />
+            <col width="5%" />
+            <col width="55%" />
+            <col width="15%" />
+            <tr>
+                <th rowspan="8">"Behavioural Abilities (Section 1) How results were achieved?"</th>
+                <th>Num</th>
+                <th>Description</th>
+                <th>Agreed Scores</th>
+            </tr>
+            @{
+                int a = 1;
+                foreach (var rar in Model.EA_Sec1)
+                {
+                    <tr>
+                        <td>@a</td>
+                        @{
+                            if (rar.Factor == "1"){<td>QUALITY AND STANDARDS OF WORK</td>}
+                            else if(rar.Factor == "2") {<td>WORK PLANNING AND EFFICIENCY (PRODUCTIVITY)</td>}
+                            else if(rar.Factor == "3") {<td>TEAMWORK AND CO-OPERATION</td>}
+                            else if(rar.Factor == "4") {<td>COMMUNICATION AND INTERPERSONAL RELATIONSHIPS</td>}
+                            else if(rar.Factor == "5") {<td>INTERNAL AND EXTERNAL CUSTOMER SERVICE</td>}
+                            else if(rar.Factor == "6") {<td>INITIATIVE AND RESOURCEFULNESS</td>}
+                            else if(rar.Factor == "7") {<td>LEADERSHIP (PEOPLE, ORGANIZATIONAL AND THOUGHT LEADERSHIP)</td>}
+                        }
+                        <td>@rar.Man_Eval</td>
+                        @{
+                            if (rar.Man_Eval != null)
+                            {
+                                b = b + Convert.ToDecimal(rar.Man_Eval);
+                            }
+
+                        }
+                    </tr>
+                                a++;
+                            }
+                            if (a == 1)
+                            {
+                                <tr>
+                                    <td>1</td>
+                                    <td>QUALITY AND STANDARDS OF WORK</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>WORK PLANNING AND EFFICIENCY (PRODUCTIVITY)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>TEAMWORK AND CO-OPERATION</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>COMMUNICATION AND INTERPERSONAL RELATIONSHIPS</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>INTERNAL AND EXTERNAL CUSTOMER SERVICE</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>INITIATIVE AND RESOURCEFULNESS</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>LEADERSHIP (PEOPLE, ORGANIZATIONAL AND THOUGHT LEADERSHIP)</td>
+                                    <td></td>
+                                </tr>
+                            }
+
+                            <tr>
+                                <th>"Performance Objectives (Section 2) What was achieved?"</th>
+                                <td>8</td>
+                                <td>Key Result/Objectives</td>
+                                @if (v != 0)
+                                {
+                                    <td><span id="totalsec6">@(c / v)</span></td>
+                                }
+                                else
+                                {
+                                    <td><span id="totalsec6">@c</span></td>
+                                }
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td style="text-align:right; border-left:hidden"><b>Average Score</b></td>
+                                <td><span id="totalfinal">@((b + c) / 2)</span></td>
+                            </tr>
+            }
+        </table>
+        <br />
+        <table id="sec6tab" border="0" cellpadding="5" width="100%">
+            <col width="15%" />
+            <col width="85%" />
+            <thead></thead>
+            <tbody>
+                @{
+                    int hg = 0;
+                    foreach (var dt in Model.EA_Sec6)
+                    {
+                        hg++;
+                        <tr>
+                            <td><label>Employee Comment : </label></td>
+                            <td><textarea name="txtComEMP" style="width:100%" rows="4">@dt.Emp_Comment</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label>Manager Comment : </label></td>
+                            <td><textarea name="txtComMAN" rows="4" style="width:100%">@dt.Man_Comment</textarea></td>
+                        </tr>
+                    }
+                    if (hg == 0)
+                    {
+                        <tr>
+                            <td><label>Employee Comment : </label></td>
+                            <td><textarea name="txtComEMP" style="width:100%" rows="4"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label>Manager Comment : </label></td>
+                            <td><textarea name="txtComMAN" rows="4" style="width:100%"></textarea></td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
+        <table cellpadding="5" border="0" width="100%">
+            <col width="10%" />
+            <col width="2%" />
+            <col width="33%" />
+            <col width="40%" />
+            <col width="5%" />
+            <col width="5%" />
+            <col width="2%"
+            <col width="8%" />
+            <tr>
+                <td>EMPLOYEE NAME </td>
+                <td>:</td>
+                <td>@Model.EA_User.Users_Fname</td>
+                <td>"This review has been read by me and my Manager has discussed this with me. I have completely understood all the matters set out in this review"</td>
+                @*<td><input name="chkemp" type="checkbox" /></td>*@
+                @{
+                    int sea = 0;
+                    foreach (var dat in Model.EA_Sec6)
+                    {
+                        sea++;
+                        if (dat.Emp_check == 1)
+                        {
+                            <td><input name="chkemp" type="checkbox" checked /></td>
+                        }
+                        else
+                        {
+                            <td><input name="chkemp" type="checkbox" /></td>
+                        }
+                    }
+                    if (sea == 0)
+                    {
+                        <td><input name="chkemp" type="checkbox" /></td>
+                    }
+                }
+                <td>Date</td>
+                <td>:</td>
+                <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
+            </tr>
+            <tr>
+                <td>SUPERVISOR/ENGINEER/ EXECUTIVE/DEPT. MANAGER NAME </td>
+                <td>:</td>
+                <td>@ViewBag.Man_Name</td>
+
+                <td>"I have fairly reviewed the employee's performance and have discussed all matters within this review with the employee."</td>
+                @*<td><input name="chkemp" type="checkbox" /></td>*@
+                @{
+                    foreach (var dat in Model.EA_Sec6)
+                    {
+                        sea++;
+                        if (dat.Man_check == 1)
+                        {
+                            <td><input name="chkman" type="checkbox" checked /></td>
+                        }
+                        else
+                        {
+                            <td><input name="chkman" type="checkbox" /></td>
+                        }
+                    }
+
+                    if (sea == 0)
+                    {
+                        <td><input name="chkman" type="checkbox" /></td>
+                    }
+                }
+
+                <td>Date</td>
+                <td>:</td>
+                <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
+            </tr>
+
+        </table>
+    </div>
+    <br />
+    <input style="margin-left:87.5%;width:70px" class="btn btn-primary" type="button" id="btnSave6" value="Submit" />  <button class="btn btn-default" onclick="PrintElem('div6')">Print</button>
+</div>
+}
+else
+{
+     <div id="Section 6" style="overflow-y:scroll;" class="tabcontent">
+    <h4>BAHAGIAN 6: KESIMPULAN PENILAIAN (KESELURUHAN PRESTASI)</h4><br />
+    <label style="color:red">Tip : Sila muat semula halaman jika tanda bersetuju kosong atau halaman tidak lengkap (Pengurus)</label>
+    <label>Kenal pasti penilaian terbaik yang menggambarkan prestasi secara keseluruhan untuk kedua-dua Prestasi Tingkah Laku (Bahagian 1) dan Objektif Prestasi (Bahagian 2)</label>
+    <br />
+    <div id="div6">
+        <table style="text-align:center" border="1" cellpadding="5" width="100%">
+            <col width="25%" />
+            <col width="5%" />
+            <col width="55%" />
+            <col width="15%" />
+            <tr>
+                <th rowspan="8">"Prestasi Tingkah Laku (Bahagian 1) Bagaimana keputusan akan dicapai?"</th>
+                <th>Num</th>
+                <th>Deskripsi</th>
+                <th>Markah yang Dipersetujui</th>
+            </tr>
+            @{
+                int a = 1;
+                foreach (var rar in Model.EA_Sec1)
+                {
+                    <tr>
+                        <td>@a</td>
+                        @{
+                            if (rar.Factor == "1"){<td>Kualiti dan Piawaian Kerja</td>}
+                            else if(rar.Factor == "2") {<td>Kecekapan dan Perancangan Kerja (Produktiviti)</td>}
+                            else if(rar.Factor == "3") {<td>Kerjasama dan Kerja Berpasukan</td>}
+                            else if(rar.Factor == "4") {<td>Komunikasi dan Hubungan Interpersonal</td>}
+                            else if(rar.Factor == "5") {<td>Khidmat Pelanggan Dalaman dan Luaran</td>}
+                            else if(rar.Factor == "6") {<td>Insiatif dan Sebagai Sumber Maklumat</td>}
+                            else if(rar.Factor == "7") {<td>Kepimpinan(Orang, Organisasi, dan Idea Kepimpinan)</td>}
+                        }
+                        <td>@rar.Man_Eval</td>
+                        @{
+                            if (rar.Man_Eval != null)
+                            {
+                                b = b + Convert.ToDecimal(rar.Man_Eval);
+                            }
+
+                        }
+                    </tr>
+                                a++;
+                            }
+                            if (a == 1)
+                            {
+                                <tr>
+                                    <td>1</td>
+                                    <td>Kualiti dan Piawaian Kerja</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Kecekapan dan Perancangan Kerja (Produktiviti)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Kerjasama dan Kerja Berpasukan</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Komunikasi dan Hubungan Interpersonal</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Khidmat Pelanggan Dalaman dan Luaran</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>Insiatif dan Sebagai Sumber Maklumat</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>Kepimpinan(Orang, Organisasi, dan Idea Kepimpinan)</td>
+                                    <td></td>
+                                </tr>
+                            }
+
+                            <tr>
+                                <th>"Objektif Prestasi (Bahagian 2) Apa yang telah dicapai?"</th>
+                                <td>8</td>
+                                <td>Objektif/Hasil Utama (sekiranya ada)</td>
+                                <td><span id="totalsec6">@c</span></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td style="text-align:right; border-left:hidden"><b>Purata Markah</b></td>
+                                <td><span id="totalfinal">@((b + c) / 2)</span></td>
+                            </tr>
+            }
+        </table>
+        <br />
+        <table id="sec6tab" border="0" cellpadding="5" width="100%">
+            <col width="15%" />
+            <col width="85%" />
+            <thead></thead>
+            <tbody>
+                @{
+                    int hg = 0;
+                    foreach (var dt in Model.EA_Sec6)
+                    {
+                        hg++;
+                        <tr>
+                            <td><label>Komen Pekerja : </label></td>
+                            <td><textarea name="txtComEMP" style="width:100%" rows="4">@dt.Emp_Comment</textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label>Komen Pengurus : </label></td>
+                            <td><textarea name="txtComMAN" rows="4" style="width:100%">@dt.Man_Comment</textarea></td>
+                        </tr>
+                    }
+                    if (hg == 0)
+                    {
+                        <tr>
+                            <td><label>Komen Pekerja : </label></td>
+                            <td><textarea name="txtComEMP" style="width:100%" rows="4"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label>Komen Pengurus : </label></td>
+                            <td><textarea name="txtComMAN" rows="4" style="width:100%"></textarea></td>
+                        </tr>
+                    }
+
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
+        <table cellpadding="5" border="0" width="100%">
+            <col width="10%" />
+            <col width="2%" />
+            <col width="33%" />
+            <col width="40%" />
+            <col width="5%" />
+            <col width="5%" />
+            <col width="2%"
+            <col width="8%" />
+            <tr>
+                <td>NAMA PEKERJA </td>
+                <td>:</td>
+                <td>@Model.EA_User.Users_Fname</td>
+                <td>"Saya telah membaca penilaian prestasi ini dan pengurus saya juga telah membincangkan penilaian ini dengan saya. Saya telah benar-benar memahami semua perkara yang dinyatakan dalam penilaian prestasi ini."</td>
+                @*<td><input name="chkemp" type="checkbox" /></td>*@
+                @{
+                    int sea = 0;
+                    foreach (var dat in Model.EA_Sec6)
+                    {
+                        sea++;
+                        if (dat.Emp_check == 1)
+                        {
+                            <td><input name="chkemp" type="checkbox" checked /></td>
+                        }
+                        else
+                        {
+                            <td><input name="chkemp" type="checkbox" /></td>
+                        }
+                    }
+                    if (sea == 0)
+                    {
+                        <td><input name="chkemp" type="checkbox" /></td>
+                    }
+                }
+                <td>Date</td>
+                <td>:</td>
+                <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
+            </tr>
+            <tr>
+                <td>NAMA PENYELIA/JURUTERA/EKSEKUTIF/ PENGURUS JABATAN : </td>
+                <td>:</td>
+                <td>@ViewBag.Man_Name</td>
+
+                <td>"Saya telah menilai prestasi pekerja ini dengan adil dan telah membincangkan semua perkara berkaitan penilaian prestasi ini dengan pekerja ini."</td>
+                @*<td><input name="chkemp" type="checkbox" /></td>*@
+                @{
+                    foreach (var dat in Model.EA_Sec6)
+                    {
+                        sea++;
+                        if (dat.Man_check == 1)
+                        {
+                            <td><input name="chkman" type="checkbox" checked /></td>
+                        }
+                        else
+                        {
+                            <td><input name="chkman" type="checkbox" /></td>
+                        }
+                    }
+
+                    if (sea == 0)
+                    {
+                        <td><input name="chkman" type="checkbox" /></td>
+                    }
+                }
+
+                <td>Date</td>
+                <td>:</td>
+                <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
+            </tr>
+
+        </table>
+    </div>
+    <br />
+    <input style="margin-left:87.5%;width:70px" class="btn btn-primary" type="button" id="btnSave6" value="Simpan" />  <button class="btn btn-default" onclick="PrintElem('div6')">Print</button>
+</div>
+}

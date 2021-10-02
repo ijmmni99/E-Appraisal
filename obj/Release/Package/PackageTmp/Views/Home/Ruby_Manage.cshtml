@@ -1,0 +1,63 @@
+﻿@{
+    if (string.IsNullOrEmpty(Session["ruby"] as string))
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    @Html.Raw(TempData["rubysign"]);
+    ViewBag.Title = "Ruby_Manage";
+    Layout = "~/Views/Shared/_LayoutInstruction.cshtml";
+}
+
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+<h2>Ruby Manage</h2>
+<h4>First Time Sign In only</h4><br />
+<div style="width:50%;height:500px">
+@using (Html.BeginForm("Ruby_Manage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="row" style="width:100%; height:300px">
+        <div class="col-md-4">
+            <label>Select Your Manager : </label>
+            </div>
+            <div class="col-md-8">
+                 <select class="form-control" name="slct">
+                    @foreach (var item in ViewBag.Manager_data)
+                    {
+                        <option>@item</option>
+                    }
+            </select>
+        </div>
+        <br /><br />
+        <div class="col-md-4"><label>Your Current Position : </label> </div> <div class="col-md-8"> <input name="pstn" type="text" class="form-control" /></div><br /><br /><br />
+        <button style="margin-left:50%" class="btn btn-default" type="submit">Submit</button>
+    </div>
+}
+</div>
+}
+else
+{
+    <h2>Pengurusan Ruby</h2>
+    <h4>Hanya Sekali Untuk Pendaftaran Baru</h4><br />
+    <div style="width:50%;height:500px">
+        @using (Html.BeginForm("Ruby_Manage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="row" style="width:100%; height:300px">
+                <div class="col-md-4">
+                    <label>Pilih Pengurus Anda : </label>
+                </div>
+                <div class="col-md-8">
+                    <select class="form-control" name="slct">
+                        @foreach (var item in ViewBag.Manager_data)
+                    {
+                            <option>@item</option>
+                        }
+                    </select>
+                </div>
+                <br /><br />
+                <div class="col-md-4"><label>Posisi Anda : </label> </div> <div class="col-md-8"> <input name="pstn" type="text" class="form-control" /></div><br /><br /><br />
+                <button style="margin-left:50%" class="btn btn-default" type="submit">Simpan</button>
+            </div>
+        }
+    </div>
+}
+

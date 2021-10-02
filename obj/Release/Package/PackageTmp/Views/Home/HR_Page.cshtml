@@ -1,0 +1,136 @@
+﻿@model IEnumerable<E_Appraisal.Models.EA_Users>
+@{
+    if (string.IsNullOrEmpty(Session["HR"] as string))
+    {
+        Response.Redirect("~/Home/Index");
+    }
+
+    ViewBag.Title = "HR_Page";
+    Layout = "~/Views/Shared/_LayoutManager.cshtml";
+}
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+<h2>HR Management</h2>
+<div style="float:right">
+    <button class="btn btn-primary" onclick="window.location.href = 'Edit_Instruction'">Edit Instruction</button>
+</div>
+<br /><br /><br />
+<div style="float:right">
+    @using (Html.BeginForm("Filter", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+       <label>EMP Name : </label> <input placeholder="Search by name.." type="text" name="empname" /> <label>Choose Department : </label> <select name="filters"><option value="All">All</option> @foreach (var item in ViewBag.depart_list) {<option value="@item">@item</option> }</select> <input class="btn-success" type="submit" value="Enter"/> 
+    }
+</div>
+<button class="btn btn-default" onclick="window.location.href = 'Submitted'">Already Submitted</button> <button class="btn btn-default" onclick="window.location.href = 'Set_Admin'">Set HR Admin</button>  <button class="btn btn-default" onclick="window.location.href = 'Import_Excel'">Import BossNet Excel File</button>
+<br /><br />
+<div style="width:100%; max-height:450px;overflow-y:scroll">
+    <table class="table">
+        <tr style="background-color:#00673E;color:#CCE4DB">
+            <th>
+                Emp Code
+            </th>
+            <th>
+                Full Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Department
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_ID)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "HR_Details", new { hrid = item.Users_ID }, new { @class = "btn btn-default" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+}
+else
+{
+    <h2>Pengurusan HR</h2>
+    <div style="float:right">
+        <button class="btn btn-primary" onclick="window.location.href = 'Edit_Instruction'">Ubah Suai Halaman Instruction</button>   <button class="btn btn-primary" onclick="window.location.href = 'Edit_Section1'">Ubah Suai Sesi 1</button>
+    </div>
+    <br /><br /><br />
+    <div style="float:right">
+        @using (Html.BeginForm("Filter", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <label>Nama Pekerja : </label> <input placeholder="Cari nama.." type="text" name="empname" /> <label>Pilih Jabatan : </label> <select name="filters"><option value="All">Semua</option><option value="Finance/IT">Finance/IT</option><option value="HR">HR</option></select> <input class="btn-success" type="submit" value="Enter" />
+        }
+    </div>
+    <button class="btn btn-default" onclick="window.location.href = 'Submitted'">Penilaian Yang Telah Disimpan</button>   <button class="btn btn-default" onclick="window.location.href = 'Set_Admin'">Daftar Admin HR</button>
+    <br /><br />
+    <div style="width:100%; max-height:450px;overflow-y:scroll">
+        <table class="table">
+            <tr style="background-color:#00673E;color:#CCE4DB">
+                <th>
+                    Kod Pekerja
+                </th>
+                <th>
+                    Nama Penuh
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Posisi
+                </th>
+                <th>
+                    Jabatan
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users_Code)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users_Fname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users_Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Users_Position)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department_ID)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Maklumat", "HR_Details", new { hrid = item.Users_ID }, new { @class = "btn btn-default" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+}

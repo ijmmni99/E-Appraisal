@@ -1,0 +1,340 @@
+﻿@model Tuple<List<E_Appraisal.Models.EA_Users>, E_Appraisal.Models.EA_Users>
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_LayoutInstruction.cshtml";
+    @Html.Raw(TempData["temp"])
+    if (TempData["temp"] != null)
+    {
+        TempData["temp"] = "";
+    }
+}
+
+@{
+    if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+    {
+        if (Model.Item1.Count > 0)
+        {
+            <div style="height:80.67vh">
+                <h2>Manager Dashboard</h2>
+                @if (Model.Item2.Passkey == "HR Admin")
+                {
+                    <div style="float:right">
+                        <label>Welcome, HR Admin</label>  <button class="btn btn-success" onclick="window.location.href = 'HR_Page'">HR Management</button>
+                    </div>
+                }
+                <br /><br />
+                <h4>Your Profile</h4>
+
+                <table class="table" width="100%" cellspacing="5">
+                    <tr style="background-color:#00673E;color:#CCE4DB">
+                        <th>
+                            EMP Code
+                        </th>
+                        <th>
+                            Full Name
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Position
+                        </th>
+                        <th>
+                            Department
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Fname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Position)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Department_ID)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Continue to Appraisal", "Instruction", new { manid = Model.Item2.Users_ID }, new { @class = "btn btn-default" })
+                        </td>
+                    </tr>
+
+                </table>
+                <br /><br />
+                <h4>Your Employee List</h4>
+                <div style="overflow-y:scroll;max-height:500px ">
+                    <table class="table" width="100%">
+                        <thead>
+                            <tr style="background-color:#00673E;color:#CCE4DB">
+                                <th>
+                                    EMP Code
+                                </th>
+                                <th>
+                                    EMP Full Name
+                                </th>
+                                <th>
+                                    EMP Email
+                                </th>
+                                <th>
+                                    EMP Position
+                                </th>
+                                <th>
+                                    EMP Department
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model.Item1)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Code)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Fname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Position)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Department_ID)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Review", "Route_Manager", new { id = item.Users_ID }, new { @class = "btn btn-default" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        }
+        else if (Model.Item1.Count == 0)
+        {
+            <div style="height:80.67vh">
+                <h2>Dashboard</h2><br />
+                @if (Model.Item2.Passkey == "HR Admin")
+                {
+                    <div style="float:right">
+                        <label>Welcome, HR Admin</label>  <button class="btn btn-success" onclick="window.location.href = 'HR_Page'">HR Management</button>
+                    </div>
+                }
+                <h4>Your Profile</h4>
+                <table class="table" width="100%">
+                    <tr style="background-color:#00673E;color:#CCE4DB">
+                        <th>
+                            EMP Code
+                        </th>
+                        <th>
+                            EMP Full Name
+                        </th>
+                        <th>
+                            EMP Email
+                        </th>
+                        <th>
+                            EMP Position
+                        </th>
+                        <th>
+                            EMP Department
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Fname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Position)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Department_ID)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Continue to Appraisal", "Instruction", new { userid = Model.Item2.Users_ID }, new { @class = "btn btn-default" })
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        }
+    }
+    else
+    {
+        if (Model.Item1.Count > 0)
+        {
+            <div style="height:80.67vh">
+                <h2>Halaman Pengurus</h2>
+                @if (Model.Item2.Passkey == "HR Admin")
+                {
+                    <div style="float:right">
+                        <label>Selamat Datang, HR Admin</label>  <button class="btn btn-success" onclick="window.location.href = 'HR_Page'">Pengurusan HR</button>
+                    </div>
+                }
+                <br /><br />
+                <h4>Profil Anda</h4>
+
+                <table class="table" width="100%" cellspacing="5">
+                    <tr style="background-color:#00673E;color:#CCE4DB">
+                        <th>
+                            Kod Pekerja
+                        </th>
+                        <th>
+                            Nama Penuh
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            Posisi
+                        </th>
+                        <th>
+                            Jabatan
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Fname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Position)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Department_ID)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Teruskan ke Penilaian", "Instruction", new { manid = Model.Item2.Users_ID }, new { @class = "btn btn-default" })
+                        </td>
+                    </tr>
+
+                </table>
+                <br /><br />
+                <h4>Senarai Pekerja Anda</h4>
+                <div style="overflow-y:scroll;max-height:500px ">
+                    <table class="table" width="100%">
+                        <thead>
+                            <tr style="background-color:#00673E;color:#CCE4DB">
+                                <th>
+                                    Kod Pekerja
+                                </th>
+                                <th>
+                                    Nama Penuh Pekerja
+                                </th>
+                                <th>
+                                    Email Pekerja
+                                </th>
+                                <th>
+                                    Posisi Pekerja
+                                </th>
+                                <th>
+                                    Jabatan Pekerja
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model.Item1)
+                    {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Code)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Fname)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Users_Position)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Department_ID)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Nilai", "Route_Manager", new { id = item.Users_ID }, new { @class = "btn btn-default" })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        }
+        else if (Model.Item1.Count == 0)
+        {
+            <div style="height:80.67vh">
+                <h2>Halaman Biodata</h2><br />
+                @if (Model.Item2.Passkey == "HR Admin")
+                {
+                    <div style="float:right">
+                        <label>Selamat Datang, HR Admin</label>  <button class="btn btn-success" onclick="window.location.href = 'HR_Page'">Pengurusan HR</button>
+                    </div>
+                }
+                <h4>Profil Anda</h4>
+                <table class="table" width="100%">
+                    <tr style="background-color:#00673E;color:#CCE4DB">
+                        <th>
+                            Kod Pekerja
+                        </th>
+                        <th>
+                            Nama Penuh Pekerja
+                        </th>
+                        <th>
+                            Email Pekerja
+                        </th>
+                        <th>
+                            Posisi Pekerja
+                        </th>
+                        <th>
+                            Jabatan Pekerja
+                        </th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Code)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Fname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Users_Position)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => Model.Item2.Department_ID)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Teruskan ke Penilaian", "Instruction", new { userid = Model.Item2.Users_ID }, new { @class = "btn btn-default" })
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        }
+    }
+}
+

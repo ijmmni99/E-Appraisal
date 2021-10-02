@@ -1,0 +1,55 @@
+﻿@using E_Appraisal.Models;
+@{
+    if (string.IsNullOrEmpty(Session["HR"] as string))
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    ViewBag.Title = "Import_Excel";
+    @Html.Raw(TempData["EmployeeList"])
+    Layout = "~/Views/Shared/_LayoutHR.cshtml";
+}
+
+<h2>Import Excel File</h2>
+<br /><br />
+@using (Html.BeginForm("Import", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <table>
+        <tr>
+            <td>Select File  </td><td>:</td>
+            <td>
+                <input type="file" name="UploadedFile" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Import Data 
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input class="btn btn-primary" type="submit" name="Import" value="Import from Excel and Save" />
+            </td>
+        </tr>
+    </table>
+}
+<br />
+<br />
+@{var list = ViewBag.EmployeeList; }
+<table class="table" id="tbl">
+    @foreach (var l in list)
+    {
+        <tr>
+            <td>@l.Emp_no</td>
+            <td>@l.ABSs</td>
+            <td>@l.Casual</td>
+            <td>@l.EL</td>
+            <td>@l.EUPL</td>
+            <td>@l.HL</td>
+            <td>@l.ML</td>
+            <td>@l.RL</td>
+            <td>@l.Late_Min</td>
+            <td>@l.Late_Time</td>
+        </tr>
+    }
+</table>

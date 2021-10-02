@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EDIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EA_Instruction">
+    <Key>
+      <PropertyRef Name="Ins_ID" />
+    </Key>
+    <Property Name="Ins_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Main_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Yellow_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Y_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Y_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Y_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Blue_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="B_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Green_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="G_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="G_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="G_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="G_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="G_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="G_6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="G_7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EA_Leave">
+    <Key>
+      <PropertyRef Name="EA_Leav" />
+    </Key>
+    <Property Name="EA_Leav" Type="Int64" Nullable="false" />
+    <Property Name="Emp_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ABSs" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Casual" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EUPL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ML" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="RL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="UPL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Late_Min" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Late_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Users_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EA_Position">
+    <Key>
+      <PropertyRef Name="Pos_ID" />
+    </Key>
+    <Property Name="Pos_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Position_Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EA_Section_1">
+    <Key>
+      <PropertyRef Name="Sec1_ID" />
+    </Key>
+    <Property Name="Sec1_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Factor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Eval" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Man_Eval" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Agreed_Score" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Support" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Actions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__395884C4" FromRole="EA_Section_1" ToRole="EA_Users" />
+  </EntityType>
+  <EntityType Name="EA_Section_2">
+    <Key>
+      <PropertyRef Name="Sec2_ID" />
+    </Key>
+    <Property Name="Sec2_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Objective" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Eval" Type="Int32" />
+    <Property Name="Man_Eval" Type="Int32" />
+    <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__09A971A2" FromRole="EA_Section_2" ToRole="EA_Users" />
+  </EntityType>
+  <EntityType Name="EA_Section_3">
+    <Key>
+      <PropertyRef Name="Sec3_ID" />
+    </Key>
+    <Property Name="Sec3_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Objective_sec3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Standards" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Measure" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__0F624AF8" FromRole="EA_Section_3" ToRole="EA_Users" />
+  </EntityType>
+  <EntityType Name="EA_Section_4">
+    <Key>
+      <PropertyRef Name="Sec4_ID" />
+    </Key>
+    <Property Name="Sec4_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Objective_sec4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Standards_sec4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Measure_sec4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__14270015" FromRole="EA_Section_4" ToRole="EA_Users" />
+  </EntityType>
+  <EntityType Name="EA_Section_5">
+    <Key>
+      <PropertyRef Name="Sec5_ID" />
+    </Key>
+    <Property Name="Sec5_ID" Type="Int32" Nullable="false" />
+    <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Outcome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Desire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Terms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Years" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__1BC821DD" FromRole="EA_Section_5" ToRole="EA_Users" />
+  </EntityType>
+  <EntityType Name="EA_Section_6">
+    <Key>
+      <PropertyRef Name="Sec6_ID" />
+    </Key>
+    <Property Name="Sec6_ID" Type="Int64" Nullable="false" />
+    <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="F_Agreed_Score" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Emp_Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Man_Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_check" Type="Int32" />
+    <Property Name="Man_check" Type="Int32" />
+    <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__2CF2ADDF" FromRole="EA_Section_6" ToRole="EA_Users" />
+  </EntityType>
+  <EntityContainer Name="EDIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EA_Instruction" EntityType="Self.EA_Instruction" />
+    <EntitySet Name="EA_Leave" EntityType="Self.EA_Leave" />
+    <EntitySet Name="EA_Position" EntityType="Self.EA_Position" />
+    <EntitySet Name="EA_Section_1" EntityType="Self.EA_Section_1" />
+    <EntitySet Name="EA_Section_2" EntityType="Self.EA_Section_2" />
+    <EntitySet Name="EA_Section_3" EntityType="Self.EA_Section_3" />
+    <EntitySet Name="EA_Section_4" EntityType="Self.EA_Section_4" />
+    <EntitySet Name="EA_Section_5" EntityType="Self.EA_Section_5" />
+    <EntitySet Name="EA_Section_6" EntityType="Self.EA_Section_6" />
+    <EntitySet Name="EA_Users" EntityType="EDIModel.EA_Users" />
+    <AssociationSet Name="FK__EA_Sectio__Emp_I__395884C4" Association="EDIModel.FK__EA_Sectio__Emp_I__395884C4">
+      <End Role="EA_Users" EntitySet="EA_Users" />
+      <End Role="EA_Section_1" EntitySet="EA_Section_1" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EA_Sectio__Emp_I__09A971A2" Association="EDIModel.FK__EA_Sectio__Emp_I__09A971A2">
+      <End Role="EA_Users" EntitySet="EA_Users" />
+      <End Role="EA_Section_2" EntitySet="EA_Section_2" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EA_Sectio__Emp_I__0F624AF8" Association="EDIModel.FK__EA_Sectio__Emp_I__0F624AF8">
+      <End Role="EA_Users" EntitySet="EA_Users" />
+      <End Role="EA_Section_3" EntitySet="EA_Section_3" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EA_Sectio__Emp_I__14270015" Association="EDIModel.FK__EA_Sectio__Emp_I__14270015">
+      <End Role="EA_Users" EntitySet="EA_Users" />
+      <End Role="EA_Section_4" EntitySet="EA_Section_4" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EA_Sectio__Emp_I__1BC821DD" Association="EDIModel.FK__EA_Sectio__Emp_I__1BC821DD">
+      <End Role="EA_Users" EntitySet="EA_Users" />
+      <End Role="EA_Section_5" EntitySet="EA_Section_5" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EA_Sectio__Emp_I__2CF2ADDF" Association="EDIModel.FK__EA_Sectio__Emp_I__2CF2ADDF">
+      <End Role="EA_Users" EntitySet="EA_Users" />
+      <End Role="EA_Section_6" EntitySet="EA_Section_6" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="EA_Users">
+    <Key>
+      <PropertyRef Name="Users_ID" />
+    </Key>
+    <Property Name="Users_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Users_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Users_Fname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Users_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Users_Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Manager_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Passkey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Department_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EA_Section_1" Relationship="EDIModel.FK__EA_Sectio__Emp_I__395884C4" FromRole="EA_Users" ToRole="EA_Section_1" />
+    <NavigationProperty Name="EA_Section_2" Relationship="EDIModel.FK__EA_Sectio__Emp_I__09A971A2" FromRole="EA_Users" ToRole="EA_Section_2" />
+    <NavigationProperty Name="EA_Section_3" Relationship="EDIModel.FK__EA_Sectio__Emp_I__0F624AF8" FromRole="EA_Users" ToRole="EA_Section_3" />
+    <NavigationProperty Name="EA_Section_4" Relationship="EDIModel.FK__EA_Sectio__Emp_I__14270015" FromRole="EA_Users" ToRole="EA_Section_4" />
+    <NavigationProperty Name="EA_Section_5" Relationship="EDIModel.FK__EA_Sectio__Emp_I__1BC821DD" FromRole="EA_Users" ToRole="EA_Section_5" />
+    <NavigationProperty Name="EA_Section_6" Relationship="EDIModel.FK__EA_Sectio__Emp_I__2CF2ADDF" FromRole="EA_Users" ToRole="EA_Section_6" />
+  </EntityType>
+  <Association Name="FK__EA_Sectio__Emp_I__395884C4">
+    <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+    <End Type="EDIModel.EA_Section_1" Role="EA_Section_1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EA_Users">
+        <PropertyRef Name="Users_ID" />
+      </Principal>
+      <Dependent Role="EA_Section_1">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EA_Sectio__Emp_I__09A971A2">
+    <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+    <End Type="EDIModel.EA_Section_2" Role="EA_Section_2" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EA_Users">
+        <PropertyRef Name="Users_ID" />
+      </Principal>
+      <Dependent Role="EA_Section_2">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EA_Sectio__Emp_I__0F624AF8">
+    <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+    <End Type="EDIModel.EA_Section_3" Role="EA_Section_3" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EA_Users">
+        <PropertyRef Name="Users_ID" />
+      </Principal>
+      <Dependent Role="EA_Section_3">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EA_Sectio__Emp_I__14270015">
+    <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+    <End Type="EDIModel.EA_Section_4" Role="EA_Section_4" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EA_Users">
+        <PropertyRef Name="Users_ID" />
+      </Principal>
+      <Dependent Role="EA_Section_4">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EA_Sectio__Emp_I__1BC821DD">
+    <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+    <End Type="EDIModel.EA_Section_5" Role="EA_Section_5" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EA_Users">
+        <PropertyRef Name="Users_ID" />
+      </Principal>
+      <Dependent Role="EA_Section_5">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EA_Sectio__Emp_I__2CF2ADDF">
+    <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+    <End Type="EDIModel.EA_Section_6" Role="EA_Section_6" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EA_Users">
+        <PropertyRef Name="Users_ID" />
+      </Principal>
+      <Dependent Role="EA_Section_6">
+        <PropertyRef Name="Emp_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

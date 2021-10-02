@@ -1,0 +1,189 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    @Html.Raw(TempData["msg"])
+    Layout = "~/Views/Shared/_LayoutSignIn.cshtml";
+}
+
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+<div style="height:66.67vh">
+<div class="jumbotron">
+    <h1>E-Appraisal</h1>
+    <p class="lead">E-Appraisal is a system for Perfomance Review <br /> <label style="font-size:13px;color:green">This website best view in Google Chrome.</label> </p>
+</div>
+<br />
+
+<div style="padding-bottom:20px;padding-left:40%;padding-right:30%">
+    <button class="btn btn-default" id="wsign" style="background-color:grey" onclick="WindowSign()">Window Sign In</button>  <button class="btn btn-default" id="rubsign" onclick="RubySign()">Ruby Sign In</button>
+</div>
+
+<div id="WinDiv" class="signin_web" style="width:100%; height:300px; padding-left:30%;padding-right:30%;display:block">
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>USER E-MAIL : </label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" name="usrname" />
+            </div>
+        </div>
+
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>PASSWORD : </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="password" class="form-control" name="pass" />
+                </div>
+            </div>
+            <div class="form-group" style="padding-left:30%;padding-right:30%">
+                    <input type="submit" value="Sign In" class="btn btn-default" />
+            </div>
+    }
+    <br /><br />
+</div>
+
+<div id="RubyDiv" class="signin_web" style="width:100%; height:300px; padding-left:30%;padding-right:30%;display:none">
+    @using (Html.BeginForm("RubySign", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>EmpID : </label>
+            </div>
+            <div class="col-md-9">
+                <input type="text" class="form-control" id="rubyusrname" name="rubyusrname" />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-3">
+                <label>ScanPassID : </label>
+            </div>
+            <div class="col-md-9">
+                <input type="password" class="form-control" id="rubypass" name="rubypass" disabled/>
+            </div>
+        </div>
+            <div class="form-group" style="padding-left:30%;padding-right:30%">
+                <input type="submit" name="btnn" value="Sign In" class="btn btn-default" disabled />
+            </div>
+    }
+    <br /><br />
+</div>
+</div>
+}
+else
+{
+    <div style="height:66.67vh">
+    <div class="jumbotron">
+        <h1>E-Penilaian</h1>
+        <p class="lead">E-Penilaian adalah sistem untuk Kajian Prestasi <br /> <label style="font-size:13px;color:green">Paparan terbaik laman web ini di Google Chrome.</label> </p>
+    </div>
+    <br />
+
+    <div style="padding-bottom:20px;padding-left:40%;padding-right:30%">
+        <button class="btn btn-default" id="wsign" style="background-color:grey" onclick="WindowSign()">Log masuk Window</button>  <button class="btn btn-default" id="rubsign" onclick="RubySign()">Log Masuk Ruby</button>
+    </div>
+
+    <div id="WinDiv" class="signin_web" style="width:100%; height:300px; padding-left:30%;padding-right:30%;display:block">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label>E-MAIL PENGGUNA : </label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" name="usrname" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label>KATA LALUAN : </label>
+                </div>
+                <div class="col-md-8">
+                    <input type="password" class="form-control" name="pass" />
+                </div>
+            </div>
+            <div class="form-group" style="padding-left:30%;padding-right:30%">
+                <input type="submit" value="Log Masuk" class="btn btn-default" />
+            </div>
+        }
+        <br /><br />
+    </div>
+
+    <div id="RubyDiv" class="signin_web" style="width:100%; height:300px; padding-left:30%;padding-right:30%;display:none">
+        @using (Html.BeginForm("RubySign", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>EmpID : </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="rubyusrname" name="rubyusrname" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-3">
+                    <label>ScanPassID : </label>
+                </div>
+                <div class="col-md-9">
+                    <input type="password" class="form-control" id="rubypass" name="rubypass" disabled />
+                </div>
+            </div>
+            <div class="form-group" style="padding-left:30%;padding-right:30%">
+                <input type="submit" name="btnn" value="Log Masuk" class="btn btn-default" disabled />
+            </div>
+        }
+        <br /><br />
+    </div>
+</div>
+}
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    function WindowSign() {
+        var x = document.getElementById("WinDiv");
+        var y = document.getElementById("RubyDiv");
+        var b = document.getElementById("wsign");
+        var d = document.getElementById("rubsign");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+            b.style.backgroundColor = "grey";
+            d.style.backgroundColor = "";
+        }
+    }
+
+    function RubySign() {
+        var x = document.getElementById("RubyDiv");
+        var y = document.getElementById("WinDiv");
+        var b = document.getElementById("rubsign");
+        var d = document.getElementById("wsign");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            y.style.display = "none";
+            b.style.backgroundColor = "grey";
+            d.style.backgroundColor = "";
+        }
+    } 
+
+    $('#rubyusrname').keypress(function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            $('input[name=rubypass]').attr('disabled', false);
+            $('input[name=rubypass]').focus();
+        }
+    });
+    $('#rubypass').keypress(function (event) {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if (keycode == '13') {
+            $('input[name=btnn]').attr('disabled', false);
+        }
+    });
+</script>
+}
+

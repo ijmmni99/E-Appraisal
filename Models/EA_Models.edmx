@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EDIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EA_Instruction">
+          <Key>
+            <PropertyRef Name="Ins_ID" />
+          </Key>
+          <Property Name="Ins_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Main_Title" Type="varchar(max)" />
+          <Property Name="Yellow_Title" Type="varchar(max)" />
+          <Property Name="Y_1" Type="varchar(max)" />
+          <Property Name="Y_2" Type="varchar(max)" />
+          <Property Name="Y_3" Type="varchar(max)" />
+          <Property Name="Blue_Title" Type="varchar(max)" />
+          <Property Name="B_1" Type="varchar(max)" />
+          <Property Name="Green_Title" Type="varchar(max)" />
+          <Property Name="G_1" Type="varchar(max)" />
+          <Property Name="G_2" Type="varchar(max)" />
+          <Property Name="G_3" Type="varchar(max)" />
+          <Property Name="G_4" Type="varchar(max)" />
+          <Property Name="G_5" Type="varchar(max)" />
+          <Property Name="G_6" Type="varchar(max)" />
+          <Property Name="G_7" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="EA_Leave">
+          <Key>
+            <PropertyRef Name="EA_Leav" />
+          </Key>
+          <Property Name="EA_Leav" Type="bigint" Nullable="false" />
+          <Property Name="Emp_no" Type="varchar" MaxLength="100" />
+          <Property Name="ABSs" Type="varchar" MaxLength="100" />
+          <Property Name="Casual" Type="varchar" MaxLength="100" />
+          <Property Name="EL" Type="varchar" MaxLength="100" />
+          <Property Name="EUPL" Type="varchar" MaxLength="100" />
+          <Property Name="HL" Type="varchar" MaxLength="100" />
+          <Property Name="ML" Type="varchar" MaxLength="100" />
+          <Property Name="RL" Type="varchar" MaxLength="100" />
+          <Property Name="UPL" Type="varchar" MaxLength="100" />
+          <Property Name="Late_Min" Type="varchar" MaxLength="100" />
+          <Property Name="Late_Time" Type="varchar" MaxLength="100" />
+          <Property Name="Years" Type="varchar" MaxLength="50" />
+          <Property Name="Users_ID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EA_Position">
+          <Key>
+            <PropertyRef Name="Pos_ID" />
+          </Key>
+          <Property Name="Pos_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Position_Title" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EA_Section_1">
+          <Key>
+            <PropertyRef Name="Sec1_ID" />
+          </Key>
+          <Property Name="Sec1_ID" Type="int" Nullable="false" />
+          <Property Name="Emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Man_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Factor" Type="varchar" MaxLength="100" />
+          <Property Name="Emp_Eval" Type="varchar" MaxLength="10" />
+          <Property Name="Man_Eval" Type="varchar" MaxLength="10" />
+          <Property Name="Agreed_Score" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Support" Type="varchar(max)" />
+          <Property Name="Actions" Type="varchar(max)" />
+          <Property Name="Years" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EA_Section_2">
+          <Key>
+            <PropertyRef Name="Sec2_ID" />
+          </Key>
+          <Property Name="Sec2_ID" Type="int" Nullable="false" />
+          <Property Name="Emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Man_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Objective" Type="varchar(max)" />
+          <Property Name="Emp_Eval" Type="int" />
+          <Property Name="Man_Eval" Type="int" />
+          <Property Name="Years" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EA_Section_3">
+          <Key>
+            <PropertyRef Name="Sec3_ID" />
+          </Key>
+          <Property Name="Sec3_ID" Type="int" Nullable="false" />
+          <Property Name="Emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Man_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Objective_sec3" Type="varchar(max)" />
+          <Property Name="Standards" Type="varchar(max)" />
+          <Property Name="Measure" Type="varchar(max)" />
+          <Property Name="Years" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EA_Section_4">
+          <Key>
+            <PropertyRef Name="Sec4_ID" />
+          </Key>
+          <Property Name="Sec4_ID" Type="int" Nullable="false" />
+          <Property Name="Emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Man_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Objective_sec4" Type="varchar(max)" />
+          <Property Name="Standards_sec4" Type="varchar(max)" />
+          <Property Name="Measure_sec4" Type="varchar(max)" />
+          <Property Name="Years" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EA_Section_5">
+          <Key>
+            <PropertyRef Name="Sec5_ID" />
+          </Key>
+          <Property Name="Sec5_ID" Type="int" Nullable="false" />
+          <Property Name="Emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Man_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Area" Type="varchar(max)" />
+          <Property Name="Outcome" Type="varchar(max)" />
+          <Property Name="Desire" Type="varchar(max)" />
+          <Property Name="Terms" Type="varchar(max)" />
+          <Property Name="Years" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="EA_Section_6">
+          <Key>
+            <PropertyRef Name="Sec6_ID" />
+          </Key>
+          <Property Name="Sec6_ID" Type="bigint" Nullable="false" />
+          <Property Name="Emp_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Man_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="F_Agreed_Score" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="Emp_Comment" Type="varchar(max)" />
+          <Property Name="Man_Comment" Type="varchar(max)" />
+          <Property Name="Emp_check" Type="int" />
+          <Property Name="Man_check" Type="int" />
+          <Property Name="Years" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EA_Users">
+          <Key>
+            <PropertyRef Name="Users_ID" />
+          </Key>
+          <Property Name="Users_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Users_Code" Type="varchar" MaxLength="50" />
+          <Property Name="Users_Fname" Type="varchar" MaxLength="100" />
+          <Property Name="Users_Email" Type="varchar" MaxLength="100" />
+          <Property Name="Users_Position" Type="varchar" MaxLength="100" />
+          <Property Name="Manager_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Passkey" Type="varchar(max)" />
+          <Property Name="Department_ID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK__EA_Sectio__Emp_I__09A971A2">
+          <End Role="EA_Users" Type="Self.EA_Users" Multiplicity="1" />
+          <End Role="EA_Section_2" Type="Self.EA_Section_2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_2">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__0F624AF8">
+          <End Role="EA_Users" Type="Self.EA_Users" Multiplicity="1" />
+          <End Role="EA_Section_3" Type="Self.EA_Section_3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_3">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__14270015">
+          <End Role="EA_Users" Type="Self.EA_Users" Multiplicity="1" />
+          <End Role="EA_Section_4" Type="Self.EA_Section_4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_4">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__1BC821DD">
+          <End Role="EA_Users" Type="Self.EA_Users" Multiplicity="1" />
+          <End Role="EA_Section_5" Type="Self.EA_Section_5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_5">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__2CF2ADDF">
+          <End Role="EA_Users" Type="Self.EA_Users" Multiplicity="1" />
+          <End Role="EA_Section_6" Type="Self.EA_Section_6" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_6">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__395884C4">
+          <End Role="EA_Users" Type="Self.EA_Users" Multiplicity="1" />
+          <End Role="EA_Section_1" Type="Self.EA_Section_1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_1">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EDIModelStoreContainer">
+          <EntitySet Name="EA_Instruction" EntityType="Self.EA_Instruction" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Leave" EntityType="Self.EA_Leave" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Position" EntityType="Self.EA_Position" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Section_1" EntityType="Self.EA_Section_1" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Section_2" EntityType="Self.EA_Section_2" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Section_3" EntityType="Self.EA_Section_3" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Section_4" EntityType="Self.EA_Section_4" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Section_5" EntityType="Self.EA_Section_5" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Section_6" EntityType="Self.EA_Section_6" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <EntitySet Name="EA_Users" EntityType="Self.EA_Users" Schema="CAMFIL\MohamaMo" store:Type="Tables" />
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__09A971A2" Association="Self.FK__EA_Sectio__Emp_I__09A971A2">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_2" EntitySet="EA_Section_2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__0F624AF8" Association="Self.FK__EA_Sectio__Emp_I__0F624AF8">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_3" EntitySet="EA_Section_3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__14270015" Association="Self.FK__EA_Sectio__Emp_I__14270015">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_4" EntitySet="EA_Section_4" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__1BC821DD" Association="Self.FK__EA_Sectio__Emp_I__1BC821DD">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_5" EntitySet="EA_Section_5" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__2CF2ADDF" Association="Self.FK__EA_Sectio__Emp_I__2CF2ADDF">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_6" EntitySet="EA_Section_6" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__395884C4" Association="Self.FK__EA_Sectio__Emp_I__395884C4">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_1" EntitySet="EA_Section_1" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EDIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EA_Instruction">
+          <Key>
+            <PropertyRef Name="Ins_ID" />
+          </Key>
+          <Property Name="Ins_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Main_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Yellow_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Y_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Y_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Y_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Blue_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="B_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Green_Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="G_1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="G_2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="G_3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="G_4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="G_5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="G_6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="G_7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EA_Leave">
+          <Key>
+            <PropertyRef Name="EA_Leav" />
+          </Key>
+          <Property Name="EA_Leav" Type="Int64" Nullable="false" />
+          <Property Name="Emp_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ABSs" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Casual" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EUPL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="HL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ML" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UPL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Late_Min" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Late_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Users_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EA_Position">
+          <Key>
+            <PropertyRef Name="Pos_ID" />
+          </Key>
+          <Property Name="Pos_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Position_Title" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EA_Section_1">
+          <Key>
+            <PropertyRef Name="Sec1_ID" />
+          </Key>
+          <Property Name="Sec1_ID" Type="Int32" Nullable="false" />
+          <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Factor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Eval" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Man_Eval" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Agreed_Score" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Support" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Actions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__395884C4" FromRole="EA_Section_1" ToRole="EA_Users" />
+        </EntityType>
+        <EntityType Name="EA_Section_2">
+          <Key>
+            <PropertyRef Name="Sec2_ID" />
+          </Key>
+          <Property Name="Sec2_ID" Type="Int32" Nullable="false" />
+          <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Objective" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Eval" Type="Int32" />
+          <Property Name="Man_Eval" Type="Int32" />
+          <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__09A971A2" FromRole="EA_Section_2" ToRole="EA_Users" />
+        </EntityType>
+        <EntityType Name="EA_Section_3">
+          <Key>
+            <PropertyRef Name="Sec3_ID" />
+          </Key>
+          <Property Name="Sec3_ID" Type="Int32" Nullable="false" />
+          <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Objective_sec3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Standards" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Measure" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__0F624AF8" FromRole="EA_Section_3" ToRole="EA_Users" />
+        </EntityType>
+        <EntityType Name="EA_Section_4">
+          <Key>
+            <PropertyRef Name="Sec4_ID" />
+          </Key>
+          <Property Name="Sec4_ID" Type="Int32" Nullable="false" />
+          <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Objective_sec4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Standards_sec4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Measure_sec4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__14270015" FromRole="EA_Section_4" ToRole="EA_Users" />
+        </EntityType>
+        <EntityType Name="EA_Section_5">
+          <Key>
+            <PropertyRef Name="Sec5_ID" />
+          </Key>
+          <Property Name="Sec5_ID" Type="Int32" Nullable="false" />
+          <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Outcome" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Desire" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Terms" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Years" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__1BC821DD" FromRole="EA_Section_5" ToRole="EA_Users" />
+        </EntityType>
+        <EntityType Name="EA_Section_6">
+          <Key>
+            <PropertyRef Name="Sec6_ID" />
+          </Key>
+          <Property Name="Sec6_ID" Type="Int64" Nullable="false" />
+          <Property Name="Emp_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Man_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="F_Agreed_Score" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="Emp_Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Man_Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_check" Type="Int32" />
+          <Property Name="Man_check" Type="Int32" />
+          <Property Name="Years" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EA_Users" Relationship="EDIModel.FK__EA_Sectio__Emp_I__2CF2ADDF" FromRole="EA_Section_6" ToRole="EA_Users" />
+        </EntityType>
+        <EntityContainer Name="EDIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EA_Instruction" EntityType="Self.EA_Instruction" />
+          <EntitySet Name="EA_Leave" EntityType="Self.EA_Leave" />
+          <EntitySet Name="EA_Position" EntityType="Self.EA_Position" />
+          <EntitySet Name="EA_Section_1" EntityType="Self.EA_Section_1" />
+          <EntitySet Name="EA_Section_2" EntityType="Self.EA_Section_2" />
+          <EntitySet Name="EA_Section_3" EntityType="Self.EA_Section_3" />
+          <EntitySet Name="EA_Section_4" EntityType="Self.EA_Section_4" />
+          <EntitySet Name="EA_Section_5" EntityType="Self.EA_Section_5" />
+          <EntitySet Name="EA_Section_6" EntityType="Self.EA_Section_6" />
+          <EntitySet Name="EA_Users" EntityType="EDIModel.EA_Users" />
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__395884C4" Association="EDIModel.FK__EA_Sectio__Emp_I__395884C4">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_1" EntitySet="EA_Section_1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__09A971A2" Association="EDIModel.FK__EA_Sectio__Emp_I__09A971A2">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_2" EntitySet="EA_Section_2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__0F624AF8" Association="EDIModel.FK__EA_Sectio__Emp_I__0F624AF8">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_3" EntitySet="EA_Section_3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__14270015" Association="EDIModel.FK__EA_Sectio__Emp_I__14270015">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_4" EntitySet="EA_Section_4" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__1BC821DD" Association="EDIModel.FK__EA_Sectio__Emp_I__1BC821DD">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_5" EntitySet="EA_Section_5" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EA_Sectio__Emp_I__2CF2ADDF" Association="EDIModel.FK__EA_Sectio__Emp_I__2CF2ADDF">
+            <End Role="EA_Users" EntitySet="EA_Users" />
+            <End Role="EA_Section_6" EntitySet="EA_Section_6" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="EA_Users">
+          <Key>
+            <PropertyRef Name="Users_ID" />
+          </Key>
+          <Property Name="Users_ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Users_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Users_Fname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Users_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Users_Position" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Manager_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Passkey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Department_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EA_Section_1" Relationship="EDIModel.FK__EA_Sectio__Emp_I__395884C4" FromRole="EA_Users" ToRole="EA_Section_1" />
+          <NavigationProperty Name="EA_Section_2" Relationship="EDIModel.FK__EA_Sectio__Emp_I__09A971A2" FromRole="EA_Users" ToRole="EA_Section_2" />
+          <NavigationProperty Name="EA_Section_3" Relationship="EDIModel.FK__EA_Sectio__Emp_I__0F624AF8" FromRole="EA_Users" ToRole="EA_Section_3" />
+          <NavigationProperty Name="EA_Section_4" Relationship="EDIModel.FK__EA_Sectio__Emp_I__14270015" FromRole="EA_Users" ToRole="EA_Section_4" />
+          <NavigationProperty Name="EA_Section_5" Relationship="EDIModel.FK__EA_Sectio__Emp_I__1BC821DD" FromRole="EA_Users" ToRole="EA_Section_5" />
+          <NavigationProperty Name="EA_Section_6" Relationship="EDIModel.FK__EA_Sectio__Emp_I__2CF2ADDF" FromRole="EA_Users" ToRole="EA_Section_6" />
+        </EntityType>
+        <Association Name="FK__EA_Sectio__Emp_I__395884C4">
+          <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+          <End Type="EDIModel.EA_Section_1" Role="EA_Section_1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_1">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__09A971A2">
+          <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+          <End Type="EDIModel.EA_Section_2" Role="EA_Section_2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_2">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__0F624AF8">
+          <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+          <End Type="EDIModel.EA_Section_3" Role="EA_Section_3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_3">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__14270015">
+          <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+          <End Type="EDIModel.EA_Section_4" Role="EA_Section_4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_4">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__1BC821DD">
+          <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+          <End Type="EDIModel.EA_Section_5" Role="EA_Section_5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_5">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EA_Sectio__Emp_I__2CF2ADDF">
+          <End Type="EDIModel.EA_Users" Role="EA_Users" Multiplicity="1" />
+          <End Type="EDIModel.EA_Section_6" Role="EA_Section_6" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EA_Users">
+              <PropertyRef Name="Users_ID" />
+            </Principal>
+            <Dependent Role="EA_Section_6">
+              <PropertyRef Name="Emp_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EDIModelStoreContainer" CdmEntityContainer="EDIEntities">
+          <EntitySetMapping Name="EA_Instruction">
+            <EntityTypeMapping TypeName="EDIModel.EA_Instruction">
+              <MappingFragment StoreEntitySet="EA_Instruction">
+                <ScalarProperty Name="Ins_ID" ColumnName="Ins_ID" />
+                <ScalarProperty Name="Main_Title" ColumnName="Main_Title" />
+                <ScalarProperty Name="Yellow_Title" ColumnName="Yellow_Title" />
+                <ScalarProperty Name="Y_1" ColumnName="Y_1" />
+                <ScalarProperty Name="Y_2" ColumnName="Y_2" />
+                <ScalarProperty Name="Y_3" ColumnName="Y_3" />
+                <ScalarProperty Name="Blue_Title" ColumnName="Blue_Title" />
+                <ScalarProperty Name="B_1" ColumnName="B_1" />
+                <ScalarProperty Name="Green_Title" ColumnName="Green_Title" />
+                <ScalarProperty Name="G_1" ColumnName="G_1" />
+                <ScalarProperty Name="G_2" ColumnName="G_2" />
+                <ScalarProperty Name="G_3" ColumnName="G_3" />
+                <ScalarProperty Name="G_4" ColumnName="G_4" />
+                <ScalarProperty Name="G_5" ColumnName="G_5" />
+                <ScalarProperty Name="G_6" ColumnName="G_6" />
+                <ScalarProperty Name="G_7" ColumnName="G_7" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Leave">
+            <EntityTypeMapping TypeName="EDIModel.EA_Leave">
+              <MappingFragment StoreEntitySet="EA_Leave">
+                <ScalarProperty Name="Users_ID" ColumnName="Users_ID" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+                <ScalarProperty Name="EA_Leav" ColumnName="EA_Leav" />
+                <ScalarProperty Name="Emp_no" ColumnName="Emp_no" />
+                <ScalarProperty Name="ABSs" ColumnName="ABSs" />
+                <ScalarProperty Name="Casual" ColumnName="Casual" />
+                <ScalarProperty Name="EL" ColumnName="EL" />
+                <ScalarProperty Name="EUPL" ColumnName="EUPL" />
+                <ScalarProperty Name="HL" ColumnName="HL" />
+                <ScalarProperty Name="ML" ColumnName="ML" />
+                <ScalarProperty Name="RL" ColumnName="RL" />
+                <ScalarProperty Name="UPL" ColumnName="UPL" />
+                <ScalarProperty Name="Late_Min" ColumnName="Late_Min" />
+                <ScalarProperty Name="Late_Time" ColumnName="Late_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Position">
+            <EntityTypeMapping TypeName="EDIModel.EA_Position">
+              <MappingFragment StoreEntitySet="EA_Position">
+                <ScalarProperty Name="Pos_ID" ColumnName="Pos_ID" />
+                <ScalarProperty Name="Position_Title" ColumnName="Position_Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Section_1">
+            <EntityTypeMapping TypeName="EDIModel.EA_Section_1">
+              <MappingFragment StoreEntitySet="EA_Section_1">
+                <ScalarProperty Name="Sec1_ID" ColumnName="Sec1_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+                <ScalarProperty Name="Factor" ColumnName="Factor" />
+                <ScalarProperty Name="Emp_Eval" ColumnName="Emp_Eval" />
+                <ScalarProperty Name="Man_Eval" ColumnName="Man_Eval" />
+                <ScalarProperty Name="Agreed_Score" ColumnName="Agreed_Score" />
+                <ScalarProperty Name="Support" ColumnName="Support" />
+                <ScalarProperty Name="Actions" ColumnName="Actions" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Section_2">
+            <EntityTypeMapping TypeName="EDIModel.EA_Section_2">
+              <MappingFragment StoreEntitySet="EA_Section_2">
+                <ScalarProperty Name="Sec2_ID" ColumnName="Sec2_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+                <ScalarProperty Name="Objective" ColumnName="Objective" />
+                <ScalarProperty Name="Emp_Eval" ColumnName="Emp_Eval" />
+                <ScalarProperty Name="Man_Eval" ColumnName="Man_Eval" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Section_3">
+            <EntityTypeMapping TypeName="EDIModel.EA_Section_3">
+              <MappingFragment StoreEntitySet="EA_Section_3">
+                <ScalarProperty Name="Sec3_ID" ColumnName="Sec3_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+                <ScalarProperty Name="Objective_sec3" ColumnName="Objective_sec3" />
+                <ScalarProperty Name="Standards" ColumnName="Standards" />
+                <ScalarProperty Name="Measure" ColumnName="Measure" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Section_4">
+            <EntityTypeMapping TypeName="EDIModel.EA_Section_4">
+              <MappingFragment StoreEntitySet="EA_Section_4">
+                <ScalarProperty Name="Sec4_ID" ColumnName="Sec4_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+                <ScalarProperty Name="Objective_sec4" ColumnName="Objective_sec4" />
+                <ScalarProperty Name="Standards_sec4" ColumnName="Standards_sec4" />
+                <ScalarProperty Name="Measure_sec4" ColumnName="Measure_sec4" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Section_5">
+            <EntityTypeMapping TypeName="EDIModel.EA_Section_5">
+              <MappingFragment StoreEntitySet="EA_Section_5">
+                <ScalarProperty Name="Sec5_ID" ColumnName="Sec5_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Outcome" ColumnName="Outcome" />
+                <ScalarProperty Name="Desire" ColumnName="Desire" />
+                <ScalarProperty Name="Terms" ColumnName="Terms" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Section_6">
+            <EntityTypeMapping TypeName="EDIModel.EA_Section_6">
+              <MappingFragment StoreEntitySet="EA_Section_6">
+                <ScalarProperty Name="Sec6_ID" ColumnName="Sec6_ID" />
+                <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+                <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+                <ScalarProperty Name="F_Agreed_Score" ColumnName="F_Agreed_Score" />
+                <ScalarProperty Name="Emp_Comment" ColumnName="Emp_Comment" />
+                <ScalarProperty Name="Man_Comment" ColumnName="Man_Comment" />
+                <ScalarProperty Name="Emp_check" ColumnName="Emp_check" />
+                <ScalarProperty Name="Man_check" ColumnName="Man_check" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EA_Users">
+            <EntityTypeMapping TypeName="EDIModel.EA_Users">
+              <MappingFragment StoreEntitySet="EA_Users">
+                <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+                <ScalarProperty Name="Passkey" ColumnName="Passkey" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+                <ScalarProperty Name="Users_Position" ColumnName="Users_Position" />
+                <ScalarProperty Name="Users_Email" ColumnName="Users_Email" />
+                <ScalarProperty Name="Users_Fname" ColumnName="Users_Fname" />
+                <ScalarProperty Name="Users_Code" ColumnName="Users_Code" />
+                <ScalarProperty Name="Users_ID" ColumnName="Users_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,281 @@
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\ApplicationInsights.config
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\csc.exe
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\System.Collections.Immutable.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\vbc.exe
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\VBCSCompiler.exe
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\roslyn\VBCSCompiler.exe.config
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\E-Appraisal.dll.config
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\E-Appraisal.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\E-Appraisal.pdb
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Antlr3.Runtime.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\EntityFramework.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\EntityFramework.SqlServer.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.Web.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.WindowsServer.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.ApplicationInsights.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Google.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Web.Infrastructure.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Newtonsoft.Json.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Owin.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Helpers.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Mvc.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Optimization.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Razor.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Deployment.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Razor.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\WebGrease.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.Web.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AI.WindowsServer.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.ApplicationInsights.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Helpers.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Mvc.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Optimization.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.Razor.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Deployment.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Razor.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Antlr3.Runtime.pdb
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Newtonsoft.Json.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\EntityFramework.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\EntityFramework.SqlServer.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Google.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.dll
+c:\users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.pdb
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.dll
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.dll
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.pdb
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.xml
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.pdb
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.xml
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.dll
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\ExcelDataReader.dll
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\ExcelDataReader.pdb
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\ExcelDataReader.xml
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.pdb
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.xml
+C:\Users\mohamamo\documents\visual studio 2015\Projects\E-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.csprojResolveAssemblyReference.cache
+C:\E-Appraisal\E-Appraisal\bin\ApplicationInsights.config
+C:\E-Appraisal\E-Appraisal\bin\roslyn\csc.exe
+C:\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\E-Appraisal\E-Appraisal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\E-Appraisal\E-Appraisal\bin\roslyn\System.Collections.Immutable.dll
+C:\E-Appraisal\E-Appraisal\bin\roslyn\System.Reflection.Metadata.dll
+C:\E-Appraisal\E-Appraisal\bin\roslyn\vbc.exe
+C:\E-Appraisal\E-Appraisal\bin\roslyn\VBCSCompiler.exe
+C:\E-Appraisal\E-Appraisal\bin\roslyn\VBCSCompiler.exe.config
+C:\E-Appraisal\E-Appraisal\bin\E-Appraisal.dll.config
+C:\E-Appraisal\E-Appraisal\bin\E-Appraisal.dll
+C:\E-Appraisal\E-Appraisal\bin\E-Appraisal.pdb
+C:\E-Appraisal\E-Appraisal\bin\Antlr3.Runtime.dll
+C:\E-Appraisal\E-Appraisal\bin\EntityFramework.dll
+C:\E-Appraisal\E-Appraisal\bin\EntityFramework.SqlServer.dll
+C:\E-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.dll
+C:\E-Appraisal\E-Appraisal\bin\ExcelDataReader.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.Agent.Intercept.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.DependencyCollector.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.Web.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.WindowsServer.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.ApplicationInsights.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Google.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.OAuth.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Web.Infrastructure.dll
+C:\E-Appraisal\E-Appraisal\bin\Newtonsoft.Json.dll
+C:\E-Appraisal\E-Appraisal\bin\Owin.dll
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Helpers.dll
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Mvc.dll
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Optimization.dll
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Razor.dll
+C:\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Deployment.dll
+C:\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.dll
+C:\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Razor.dll
+C:\E-Appraisal\E-Appraisal\bin\WebGrease.dll
+C:\E-Appraisal\E-Appraisal\bin\ExcelDataReader.pdb
+C:\E-Appraisal\E-Appraisal\bin\ExcelDataReader.xml
+C:\E-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.pdb
+C:\E-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.DependencyCollector.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.Web.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AI.WindowsServer.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.ApplicationInsights.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.pdb
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.pdb
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.xml
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Helpers.xml
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Mvc.xml
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Optimization.xml
+C:\E-Appraisal\E-Appraisal\bin\System.Web.Razor.xml
+C:\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.xml
+C:\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Deployment.xml
+C:\E-Appraisal\E-Appraisal\bin\System.Web.WebPages.Razor.xml
+C:\E-Appraisal\E-Appraisal\bin\Antlr3.Runtime.pdb
+C:\E-Appraisal\E-Appraisal\bin\Newtonsoft.Json.xml
+C:\E-Appraisal\E-Appraisal\bin\EntityFramework.xml
+C:\E-Appraisal\E-Appraisal\bin\EntityFramework.SqlServer.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Core.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Facebook.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Cookies.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.OAuth.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Google.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Twitter.xml
+C:\E-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\E-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.dll
+C:\E-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.pdb
+C:\oE-Appraisal\E-Appraisal\bin\ApplicationInsights.config
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\csc.exe
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\System.Collections.Immutable.dll
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\System.Reflection.Metadata.dll
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\vbc.exe
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\VBCSCompiler.exe
+C:\oE-Appraisal\E-Appraisal\bin\roslyn\VBCSCompiler.exe.config
+C:\oE-Appraisal\E-Appraisal\bin\E-Appraisal.dll.config
+C:\oE-Appraisal\E-Appraisal\bin\E-Appraisal.dll
+C:\oE-Appraisal\E-Appraisal\bin\E-Appraisal.pdb
+C:\oE-Appraisal\E-Appraisal\bin\Antlr3.Runtime.dll
+C:\oE-Appraisal\E-Appraisal\bin\EntityFramework.dll
+C:\oE-Appraisal\E-Appraisal\bin\EntityFramework.SqlServer.dll
+C:\oE-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.dll
+C:\oE-Appraisal\E-Appraisal\bin\ExcelDataReader.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.Agent.Intercept.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.DependencyCollector.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.Web.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.WindowsServer.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.ApplicationInsights.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Core.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Cookies.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Facebook.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Google.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.OAuth.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Twitter.dll
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Web.Infrastructure.dll
+C:\oE-Appraisal\E-Appraisal\bin\Newtonsoft.Json.dll
+C:\oE-Appraisal\E-Appraisal\bin\Owin.dll
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Helpers.dll
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Mvc.dll
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Optimization.dll
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Razor.dll
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.WebPages.Deployment.dll
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.WebPages.dll
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.WebPages.Razor.dll
+C:\oE-Appraisal\E-Appraisal\bin\WebGrease.dll
+C:\oE-Appraisal\E-Appraisal\bin\ExcelDataReader.pdb
+C:\oE-Appraisal\E-Appraisal\bin\ExcelDataReader.xml
+C:\oE-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.pdb
+C:\oE-Appraisal\E-Appraisal\bin\ExcelDataReader.DataSet.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.DependencyCollector.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.Web.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AI.WindowsServer.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.ApplicationInsights.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.pdb
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.pdb
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Exchange.WebServices.Auth.xml
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Helpers.xml
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Mvc.xml
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Optimization.xml
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.Razor.xml
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.WebPages.xml
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.WebPages.Deployment.xml
+C:\oE-Appraisal\E-Appraisal\bin\System.Web.WebPages.Razor.xml
+C:\oE-Appraisal\E-Appraisal\bin\Antlr3.Runtime.pdb
+C:\oE-Appraisal\E-Appraisal\bin\Newtonsoft.Json.xml
+C:\oE-Appraisal\E-Appraisal\bin\EntityFramework.xml
+C:\oE-Appraisal\E-Appraisal\bin\EntityFramework.SqlServer.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Core.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Facebook.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Cookies.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.OAuth.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Google.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.Twitter.xml
+C:\oE-Appraisal\E-Appraisal\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\oE-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.csprojResolveAssemblyReference.cache
+C:\oE-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.dll
+C:\oE-Appraisal\E-Appraisal\obj\Debug\E-Appraisal.pdb

@@ -1,0 +1,411 @@
+﻿@model Tuple<E_Appraisal.Models.EA_Instruction, E_Appraisal.Models.EA_Instruction>
+@{
+    if (string.IsNullOrEmpty(Session["HR"] as string))
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    ViewBag.Title = "Edit_Instruction";
+    Layout = "~/Views/Shared/_LayoutHR.cshtml";
+}
+<style>
+    p {
+        text-align: left;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>
+<h2>Edit Instruction</h2>
+<br />
+<table border="1" cellpadding="5" cellspacing="10" width="100%">
+    <col width="120px" />
+    <col width="250px" />
+    <col width="250px" />
+    <col width="250px" />
+    <tr>
+        <td>Name of Employee : </td>
+        <td>NULL</td>
+        <td>Name of Immediate Manager/Supervisor : </td>
+        <td>NULL</td>
+    </tr>
+    <tr>
+        <td>Position : </td>
+        <td>NULL</td>
+        <td>Date : </td>
+        <td>NULL</td>
+    </tr>
+    <tr>
+        <td>Department : </td>
+        <td>NULL</td>
+        <td>Time in Posistion : </td>
+        <td>NULL</td>
+    </tr>
+</table>
+<br />
+@if (Model.Item1 != null)
+{
+    using (Html.BeginForm("Edit_Instruction", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <h4 class="text-center"><b><textarea name="mt" rows="1">@Model.Item1.Main_Title</textarea></b></h4>
+            <br />
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:yellow">
+                    <h5 class="text-center" style="background-color:yellow"><b><textarea name="ytitle" rows="1">@Model.Item1.Yellow_Title</textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea rows="4" name="y1">@Model.Item1.Y_1</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="y2">@Model.Item1.Y_2</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="y3">@Model.Item1.Y_3</textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="border-style:ridge; border-color:deepskyblue">
+                    <h5 class="text-center" style="background-color:deepskyblue"><b><textarea name="btitle" rows="1">@Model.Item1.Blue_Title</textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea rows="4" name="b1">@Model.Item1.B_1</textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="text-align:center">
+                    <div style="margin:10px">
+                        <table border="1" cellpadding="2" width="100%">
+                            <tr>
+                                <th style="background-color:lightgray">Score</th>
+                                <th style="background-color:lightgray">Criterion</th>
+                            </tr>
+                            <tr><td>1</td><td>Needs Improvement</td></tr>
+                            <tr><td>2</td><td>Occasionally Below Requirements</td></tr>
+                            <tr><td>3</td><td>Meets Requirements</td></tr>
+                            <tr><td>4</td><td>Occasionally Exceeds Requirements</td></tr>
+                            <tr><td>5</td><td>Exceeds Requirements</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:lightgreen">
+                    <h5 class="text-center" style="background-color:lightgreen;"><b><textarea rows="1" name="gtitle">@Model.Item1.Green_Title</textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea rows="4" name="g1">@Model.Item1.G_1</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g2">@Model.Item1.G_2</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g3">@Model.Item1.G_3</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g4">@Model.Item1.G_4</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g5">@Model.Item1.G_5</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g6">@Model.Item1.G_6</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g7">@Model.Item1.G_7</textarea>
+                        </p>
+                    </div>
+                </div>
+                <div style="margin:10px">
+                    <button type="reset" onclick="window.location.href = 'HR_Page'" class="btn btn-danger">Cancel</button>  <button type="submit" class="btn btn-success">Enter</button> 
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+}
+else
+{
+    using (Html.BeginForm("Edit_Instruction", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <h4 class="text-center"><b><textarea name="mt" rows="1"></textarea></b></h4>
+            <br />
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:yellow">
+                    <h5 class="text-center" style="background-color:yellow"><b><textarea name="ytitle" rows="1"></textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea name="y1"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="y2"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="y3"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="border-style:ridge; border-color:deepskyblue">
+                    <h5 class="text-center" style="background-color:deepskyblue"><b><textarea name="btitle" rows="1"></textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea name="b1"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="text-align:center">
+                    <div style="margin:10px">
+                        <table border="1" cellpadding="2" width="100%">
+                            <tr>
+                                <th style="background-color:lightgray">Score</th>
+                                <th style="background-color:lightgray">Criterion</th>
+                            </tr>
+                            <tr><td>1</td><td>Needs Improvement</td></tr>
+                            <tr><td>2</td><td>Occasionally Below Requirements</td></tr>
+                            <tr><td>3</td><td>Meets Requirements</td></tr>
+                            <tr><td>4</td><td>Occasionally Exceeds Requirements</td></tr>
+                            <tr><td>5</td><td>Exceeds Requirements</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:lightgreen">
+                    <h5 class="text-center" style="background-color:lightgreen;"><b><textarea rows="1" name="gtitle"></textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea name="g1"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g2"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g3"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g4"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g5"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g6"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g7"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <div style="margin:10px">
+                    <button type="submit" class="btn btn-success">Enter</button>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+}
+
+<br /><br />
+@if (Model.Item2 != null)
+{
+    using (Html.BeginForm("Edit_Instruction2", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <h4 class="text-center"><b><textarea name="mt" rows="1">@Model.Item2.Main_Title</textarea></b></h4>
+            <br />
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:yellow">
+                    <h5 class="text-center" style="background-color:yellow"><b><textarea name="ytitle" rows="1">@Model.Item2.Yellow_Title</textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea rows="4" name="y1">@Model.Item2.Y_1</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="y2">@Model.Item2.Y_2</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="y3">@Model.Item2.Y_3</textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="border-style:ridge; border-color:deepskyblue">
+                    <h5 class="text-center" style="background-color:deepskyblue"><b><textarea name="btitle" rows="1">@Model.Item2.Blue_Title</textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea rows="4" name="b1">@Model.Item2.B_1</textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="text-align:center">
+                    <div style="margin:10px">
+                        <table border="1" cellpadding="2" width="100%">
+                            <tr>
+                                <th style="background-color:lightgray">Score</th>
+                                <th style="background-color:lightgray">Criterion</th>
+                            </tr>
+                            <tr><td>1</td><td>Needs Improvement</td></tr>
+                            <tr><td>2</td><td>Occasionally Below Requirements</td></tr>
+                            <tr><td>3</td><td>Meets Requirements</td></tr>
+                            <tr><td>4</td><td>Occasionally Exceeds Requirements</td></tr>
+                            <tr><td>5</td><td>Exceeds Requirements</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:lightgreen">
+                    <h5 class="text-center" style="background-color:lightgreen;"><b><textarea rows="1" name="gtitle">@Model.Item2.Green_Title</textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea rows="4" name="g1">@Model.Item2.G_1</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g2">@Model.Item2.G_2</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g3">@Model.Item2.G_3</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g4">@Model.Item2.G_4</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g5">@Model.Item2.G_5</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g6">@Model.Item2.G_6</textarea>
+                        </p>
+                        <p>
+                            <textarea rows="4" name="g7">@Model.Item2.G_7</textarea>
+                        </p>
+                    </div>
+                </div>
+                <div style="margin:10px">
+                    <button type="reset" onclick="window.location.href = 'HR_Page'" class="btn btn-danger">Cancel</button>  <button type="submit" class="btn btn-success">Enter</button>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+}
+else
+{
+    using (Html.BeginForm("Edit_Instruction2", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="row">
+            <h4 class="text-center"><b><textarea name="mt" rows="1"></textarea></b></h4>
+            <br />
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:yellow">
+                    <h5 class="text-center" style="background-color:yellow"><b><textarea name="ytitle" rows="1"></textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea name="y1"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="y2"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="y3"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="border-style:ridge; border-color:deepskyblue">
+                    <h5 class="text-center" style="background-color:deepskyblue"><b><textarea name="btitle" rows="1"></textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea name="b1"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <br />
+                <div style="text-align:center">
+                    <div style="margin:10px">
+                        <table border="1" cellpadding="2" width="100%">
+                            <tr>
+                                <th style="background-color:lightgray">Score</th>
+                                <th style="background-color:lightgray">Criterion</th>
+                            </tr>
+                            <tr><td>1</td><td>Needs Improvement</td></tr>
+                            <tr><td>2</td><td>Occasionally Below Requirements</td></tr>
+                            <tr><td>3</td><td>Meets Requirements</td></tr>
+                            <tr><td>4</td><td>Occasionally Exceeds Requirements</td></tr>
+                            <tr><td>5</td><td>Exceeds Requirements</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="border-style:ridge; border-color:lightgreen">
+                    <h5 class="text-center" style="background-color:lightgreen;"><b><textarea rows="1" name="gtitle"></textarea></b></h5>
+                    <div style="margin:10px">
+                        <p>
+                            <textarea name="g1"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g2"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g3"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g4"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g5"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g6"></textarea>
+                        </p>
+                        <p>
+                            <textarea name="g7"></textarea>
+                        </p>
+                    </div>
+                </div>
+                <div style="margin:10px">
+                    <button type="submit" class="btn btn-success">Enter</button>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+}
+<div>
+    <table border="1" cellpadding="5" width="100%">
+        <tr>
+            <th>Emp No</th>
+            <th>Name</th>
+            <th>ABS</th>
+            <th>CASUAL</th>
+            <th>EL</th>
+            <th>EUPL</th>
+            <th>HL</th>
+            <th>ML</th>
+            <th>RL</th>
+            <th>UPL</th>
+            <th>LATE (MIN)</th>
+            <th>LATE (TIME)</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EDIModelStoreContainer" CdmEntityContainer="EDIEntities">
+    <EntitySetMapping Name="EA_Instruction">
+      <EntityTypeMapping TypeName="EDIModel.EA_Instruction">
+        <MappingFragment StoreEntitySet="EA_Instruction">
+          <ScalarProperty Name="Ins_ID" ColumnName="Ins_ID" />
+          <ScalarProperty Name="Main_Title" ColumnName="Main_Title" />
+          <ScalarProperty Name="Yellow_Title" ColumnName="Yellow_Title" />
+          <ScalarProperty Name="Y_1" ColumnName="Y_1" />
+          <ScalarProperty Name="Y_2" ColumnName="Y_2" />
+          <ScalarProperty Name="Y_3" ColumnName="Y_3" />
+          <ScalarProperty Name="Blue_Title" ColumnName="Blue_Title" />
+          <ScalarProperty Name="B_1" ColumnName="B_1" />
+          <ScalarProperty Name="Green_Title" ColumnName="Green_Title" />
+          <ScalarProperty Name="G_1" ColumnName="G_1" />
+          <ScalarProperty Name="G_2" ColumnName="G_2" />
+          <ScalarProperty Name="G_3" ColumnName="G_3" />
+          <ScalarProperty Name="G_4" ColumnName="G_4" />
+          <ScalarProperty Name="G_5" ColumnName="G_5" />
+          <ScalarProperty Name="G_6" ColumnName="G_6" />
+          <ScalarProperty Name="G_7" ColumnName="G_7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Leave">
+      <EntityTypeMapping TypeName="EDIModel.EA_Leave">
+        <MappingFragment StoreEntitySet="EA_Leave">
+          <ScalarProperty Name="Users_ID" ColumnName="Users_ID" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+          <ScalarProperty Name="EA_Leav" ColumnName="EA_Leav" />
+          <ScalarProperty Name="Emp_no" ColumnName="Emp_no" />
+          <ScalarProperty Name="ABSs" ColumnName="ABSs" />
+          <ScalarProperty Name="Casual" ColumnName="Casual" />
+          <ScalarProperty Name="EL" ColumnName="EL" />
+          <ScalarProperty Name="EUPL" ColumnName="EUPL" />
+          <ScalarProperty Name="HL" ColumnName="HL" />
+          <ScalarProperty Name="ML" ColumnName="ML" />
+          <ScalarProperty Name="RL" ColumnName="RL" />
+          <ScalarProperty Name="UPL" ColumnName="UPL" />
+          <ScalarProperty Name="Late_Min" ColumnName="Late_Min" />
+          <ScalarProperty Name="Late_Time" ColumnName="Late_Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Position">
+      <EntityTypeMapping TypeName="EDIModel.EA_Position">
+        <MappingFragment StoreEntitySet="EA_Position">
+          <ScalarProperty Name="Pos_ID" ColumnName="Pos_ID" />
+          <ScalarProperty Name="Position_Title" ColumnName="Position_Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Section_1">
+      <EntityTypeMapping TypeName="EDIModel.EA_Section_1">
+        <MappingFragment StoreEntitySet="EA_Section_1">
+          <ScalarProperty Name="Sec1_ID" ColumnName="Sec1_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+          <ScalarProperty Name="Factor" ColumnName="Factor" />
+          <ScalarProperty Name="Emp_Eval" ColumnName="Emp_Eval" />
+          <ScalarProperty Name="Man_Eval" ColumnName="Man_Eval" />
+          <ScalarProperty Name="Agreed_Score" ColumnName="Agreed_Score" />
+          <ScalarProperty Name="Support" ColumnName="Support" />
+          <ScalarProperty Name="Actions" ColumnName="Actions" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Section_2">
+      <EntityTypeMapping TypeName="EDIModel.EA_Section_2">
+        <MappingFragment StoreEntitySet="EA_Section_2">
+          <ScalarProperty Name="Sec2_ID" ColumnName="Sec2_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+          <ScalarProperty Name="Objective" ColumnName="Objective" />
+          <ScalarProperty Name="Emp_Eval" ColumnName="Emp_Eval" />
+          <ScalarProperty Name="Man_Eval" ColumnName="Man_Eval" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Section_3">
+      <EntityTypeMapping TypeName="EDIModel.EA_Section_3">
+        <MappingFragment StoreEntitySet="EA_Section_3">
+          <ScalarProperty Name="Sec3_ID" ColumnName="Sec3_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+          <ScalarProperty Name="Objective_sec3" ColumnName="Objective_sec3" />
+          <ScalarProperty Name="Standards" ColumnName="Standards" />
+          <ScalarProperty Name="Measure" ColumnName="Measure" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Section_4">
+      <EntityTypeMapping TypeName="EDIModel.EA_Section_4">
+        <MappingFragment StoreEntitySet="EA_Section_4">
+          <ScalarProperty Name="Sec4_ID" ColumnName="Sec4_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+          <ScalarProperty Name="Objective_sec4" ColumnName="Objective_sec4" />
+          <ScalarProperty Name="Standards_sec4" ColumnName="Standards_sec4" />
+          <ScalarProperty Name="Measure_sec4" ColumnName="Measure_sec4" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Section_5">
+      <EntityTypeMapping TypeName="EDIModel.EA_Section_5">
+        <MappingFragment StoreEntitySet="EA_Section_5">
+          <ScalarProperty Name="Sec5_ID" ColumnName="Sec5_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Outcome" ColumnName="Outcome" />
+          <ScalarProperty Name="Desire" ColumnName="Desire" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Section_6">
+      <EntityTypeMapping TypeName="EDIModel.EA_Section_6">
+        <MappingFragment StoreEntitySet="EA_Section_6">
+          <ScalarProperty Name="Sec6_ID" ColumnName="Sec6_ID" />
+          <ScalarProperty Name="Emp_ID" ColumnName="Emp_ID" />
+          <ScalarProperty Name="Man_ID" ColumnName="Man_ID" />
+          <ScalarProperty Name="F_Agreed_Score" ColumnName="F_Agreed_Score" />
+          <ScalarProperty Name="Emp_Comment" ColumnName="Emp_Comment" />
+          <ScalarProperty Name="Man_Comment" ColumnName="Man_Comment" />
+          <ScalarProperty Name="Emp_check" ColumnName="Emp_check" />
+          <ScalarProperty Name="Man_check" ColumnName="Man_check" />
+          <ScalarProperty Name="Years" ColumnName="Years" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EA_Users">
+      <EntityTypeMapping TypeName="EDIModel.EA_Users">
+        <MappingFragment StoreEntitySet="EA_Users">
+          <ScalarProperty Name="Department_ID" ColumnName="Department_ID" />
+          <ScalarProperty Name="Passkey" ColumnName="Passkey" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+          <ScalarProperty Name="Users_Position" ColumnName="Users_Position" />
+          <ScalarProperty Name="Users_Email" ColumnName="Users_Email" />
+          <ScalarProperty Name="Users_Fname" ColumnName="Users_Fname" />
+          <ScalarProperty Name="Users_Code" ColumnName="Users_Code" />
+          <ScalarProperty Name="Users_ID" ColumnName="Users_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

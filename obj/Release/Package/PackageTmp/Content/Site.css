@@ -1,0 +1,36 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family:'Trebuchet MS';
+    top: 0px !important; 
+}
+a{
+    color:lightgrey
+}
+
+a:hover{
+    color: white;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+textarea{
+    height:100%;
+    width:100%;
+    resize:vertical;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+    } 
+

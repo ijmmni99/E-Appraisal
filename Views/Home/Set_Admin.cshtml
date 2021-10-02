@@ -1,0 +1,84 @@
+﻿@model IEnumerable<E_Appraisal.Models.EA_Users>
+
+@{
+    if (string.IsNullOrEmpty(Session["HR"] as string))
+    {
+        Response.Redirect("~/Home/Index");
+    }
+
+    ViewBag.Title = "Set_Admin";
+    @Html.Raw(TempData["HR_Set_Admin"])
+    TempData["HR_Set_Admin"] = "";
+    Layout = "~/Views/Shared/_LayoutHR.cshtml";
+}
+<br />
+<h2>Set HR Admin</h2>
+<br /><br />
+<div style="float:right">
+    @using (Html.BeginForm("Set_Admin_Filter", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <label>EMP Name : </label> <input placeholder="Search by name.." type="text" name="empname" /> <label>Choose Department : </label> <select name="filters"><option value="All">All</option> @foreach (var item in ViewBag.depart_list)
+        {
+    <option value="@item">@item</option> }</select> <input class="btn-success" type="submit" value="Enter" />
+    }
+</div>
+<br /><br />
+<div style="height:66.67vh;overflow-y:scroll">
+    <table cellpadding="10" border="1" width="100%">
+        <tr style="background-color:lightgrey">
+            <th>
+                EMP Code
+            </th>
+            <th>
+                Full Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Department
+            </th>
+            <th>
+                Pass Key (Admin)
+            </th>
+            <th colspan="2"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Code)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Users_Position)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department_ID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Passkey)
+                </td>
+                <td>
+                    @Html.ActionLink("Set Admin", "Set_Admin", new { id = item.Users_ID }, new { @class = "btn btn-default" })
+                </td>
+                <td>
+                    @if (item.Passkey == "HR Admin")
+                    {
+                        @Html.ActionLink("Remove Admin", "Set_Admin", new { delete = item.Users_ID }, new { @class = "btn btn-danger" })
+                    }
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

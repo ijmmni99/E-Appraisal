@@ -1,0 +1,345 @@
+﻿@model E_Appraisal.Models.Instruction
+@{
+    if(Session["Current"] == null)
+    {
+        Response.Redirect("~/Home/Index");
+    }
+    if (!string.IsNullOrEmpty(Session["Manager"] as string) || !string.IsNullOrEmpty(Session["hehehe"] as string))
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_LayoutInstruction.cshtml";
+    }
+
+}
+<style>
+    p{
+        text-align:left;
+    }
+
+    th{
+        text-align:center;
+    }
+</style>
+
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+    <h2>Performance Review</h2>
+    <br />
+    <table border="1" cellpadding="5" cellspacing="10" width="100%">
+        <col width="120px" />
+        <col width="250px" />
+        <col width="250px" />
+        <col width="250px" />
+        <tr>
+            <td>Name of Employee : </td>
+            <td>@Model.EA_User.Users_Fname</td>
+            <td>Name of Immediate Manager/Supervisor : </td>
+            <td>@ViewBag.Man_Name</td>
+        </tr>
+        <tr>
+            <td>Position : </td>
+            <td>@Model.EA_User.Users_Position</td>
+            <td>Date : </td>
+            <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <td>Department : </td>
+            <td>@Model.EA_User.Department_ID</td>
+            <td>Time in Posistion : </td>
+            <td>@Model.EA_User.Users_Position</td>
+        </tr>
+    </table>
+    <br />
+    <div class="row">
+        <h4 class="text-center"><b>@Model.EA_Ins.Main_Title</b></h4>
+        <br />
+        <div class="col-md-6">
+            <div style="border-style:ridge; border-color:yellow">
+                <h5 class="text-center" style="background-color:yellow"><b>@Model.EA_Ins.Yellow_Title</b></h5>
+                <div style="margin:10px">
+                    <p>
+                        @Model.EA_Ins.Y_1
+                    </p>
+                    <p>
+                        @Model.EA_Ins.Y_2
+                    </p>
+                    <p>
+                        @Model.EA_Ins.Y_3
+                    </p>
+                </div>
+            </div>
+            <br />
+            <div style="border-style:ridge; border-color:deepskyblue">
+                <h5 class="text-center" style="background-color:deepskyblue"><b>@Model.EA_Ins.Blue_Title</b></h5>
+                <div style="margin:10px">
+                    <p>
+                        @Model.EA_Ins.B_1
+                    </p>
+                </div>
+            </div>
+            <br />
+            <div style="text-align:center">
+                <div style="margin:10px">
+                    <table border="1" cellpadding="2" width="100%">
+                        <tr>
+                            <th style="background-color:lightgray">Score</th>
+                            <th style="background-color:lightgray">Criterion</th>
+                        </tr>
+                        <tr><td>1</td><td>Needs Improvement</td></tr>
+                        <tr><td>2</td><td>Occasionally Below Requirements</td></tr>
+                        <tr><td>3</td><td>Meets Requirements</td></tr>
+                        <tr><td>4</td><td>Occasionally Exceeds Requirements</td></tr>
+                        <tr><td>5</td><td>Exceeds Requirements</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div style="border-style:ridge; border-color:lightgreen">
+                <h5 class="text-center" style="background-color:lightgreen;"><b>@Model.EA_Ins.Green_Title</b></h5>
+                <div style="margin:10px">
+                    <p>
+                        @Model.EA_Ins.G_1
+                    </p>
+                    <p>
+                        @Model.EA_Ins.G_2
+                    </p>
+                    <p>
+                        @Model.EA_Ins.G_3
+                    </p>
+                    <p>
+                        @Model.EA_Ins.G_4
+                    </p>
+                    <p>
+                        @Model.EA_Ins.G_5
+                    </p>
+                    <p>
+                        @Model.EA_Ins.G_6
+                    </p>
+                    <p>
+                        @Model.EA_Ins.G_7
+                    </p>
+                </div>
+            </div>
+            <div style="margin:10px">
+                @Html.ActionLink("Continue Next Page", "Contact", new { }, new { @class = "btn btn-success", style = "width:100%" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div>
+        <table border="1" cellpadding="5" style="text-align:center" width="100%">
+            <tr>
+                <th>Emp No</th>
+                <th>Name</th>
+                <th>ABS</th>
+                <th>CASUAL</th>
+                <th>EL</th>
+                <th>EUPL</th>
+                <th>HL</th>
+                <th>ML</th>
+                <th>RL</th>
+                <th>UPL</th>
+                <th>LATE (MIN)</th>
+                <th>LATE (TIME)</th>
+            </tr>
+            @if (Model.EA_Leav != null)
+            {
+                <tr>
+                    <td>@Model.EA_Leav.Emp_no</td>
+                    <td>@Model.EA_User.Users_Fname</td>
+                    <td>@Model.EA_Leav.ABSs</td>
+                    <td>@Model.EA_Leav.Casual</td>
+                    <td>@Model.EA_Leav.EL</td>
+                    <td>@Model.EA_Leav.EUPL</td>
+                    <td>@Model.EA_Leav.HL</td>
+                    <td>@Model.EA_Leav.ML</td>
+                    <td>@Model.EA_Leav.RL</td>
+                    <td>@Model.EA_Leav.UPL</td>
+                    <td>@Model.EA_Leav.Late_Min</td>
+                    <td>@Model.EA_Leav.Late_Time</td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+else
+{
+    <h2>PENILAIAN PRESTASI</h2>
+    <br />
+    <table border="1" cellpadding="5" cellspacing="10" width="100%">
+        <col width="120px" />
+        <col width="250px" />
+        <col width="250px" />
+        <col width="250px" />
+        <tr>
+            <td>Nama Pekerja : </td>
+            <td>@Model.EA_User.Users_Fname</td>
+            <td>Nama Pengurus/Penyelia : </td>
+            <td>@ViewBag.Man_Name</td>
+        </tr>
+        <tr>
+            <td>Jawatan : </td>
+            <td>@Model.EA_User.Users_Position</td>
+            <td>Tarikh : </td>
+            <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
+        </tr>
+        <tr>
+            <td>Jabatan :</td>
+            <td>@Model.EA_User.Department_ID</td>
+            <td>Jawatan Terkini : </td>
+            <td>@Model.EA_User.Users_Position</td>
+        </tr>
+    </table>
+    <br />
+    <div class="row">
+        <h4 class="text-center"><b>@Model.EA_Ins2.Main_Title</b></h4>
+        <br />
+        <div class="col-md-6">
+            <div style="border-style:ridge; border-color:yellow">
+                <h5 class="text-center" style="background-color:yellow"><b>@Model.EA_Ins2.Yellow_Title</b></h5>
+                <div style="margin:10px">
+                    <p>
+                        @Model.EA_Ins2.Y_1
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.Y_2
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.Y_3
+                    </p>
+                </div>
+            </div>
+            <br />
+            <div style="border-style:ridge; border-color:deepskyblue">
+                <h5 class="text-center" style="background-color:deepskyblue"><b>@Model.EA_Ins2.Blue_Title</b></h5>
+                <div style="margin:10px">
+                    <p>
+                        @Model.EA_Ins2.B_1
+                    </p>
+                </div>
+            </div>
+            <br />
+            <div style="text-align:center">
+                <div style="margin:10px">
+                    <table border="1" cellpadding="2" width="100%">
+                        <tr>
+                            <th style="background-color:lightgray">Markah</th>
+                            <th style="background-color:lightgray">Kriteria</th>
+                        </tr>
+                        <tr><td>1</td><td>Perlu Penambahbaikan</td></tr>
+                        <tr><td>2</td><td>Kadang-Kadang dibawah Keperluan</td></tr>
+                        <tr><td>3</td><td>Keperluan Dicapai</td></tr>
+                        <tr><td>4</td><td>Kadang-Kadang melebihi Keperluan</td></tr>
+                        <tr><td>5</td><td>Melebihi Keperluan</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div style="border-style:ridge; border-color:lightgreen">
+                <h5 class="text-center" style="background-color:lightgreen;"><b>@Model.EA_Ins2.Green_Title</b></h5>
+                <div style="margin:10px">
+                    <p>
+                        @Model.EA_Ins2.G_1
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.G_2
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.G_3
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.G_4
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.G_5
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.G_6
+                    </p>
+                    <p>
+                        @Model.EA_Ins2.G_7
+                    </p>
+                </div>
+            </div>
+            <div style="margin:10px">
+                @Html.ActionLink("Teruskan Ke Halaman Penilaian", "Contact", new { }, new { @class = "btn btn-success", style = "width:100%" })
+            </div>
+        </div>
+    </div>
+    <br />
+    <div>
+        <table border="1" cellpadding="5" style="text-align:center" width="100%">
+            <tr>
+                <th>Nombor Pekerja</th>
+                <th>Nama Penuh</th>
+                <th>ABS</th>
+                <th>KASUAL</th>
+                <th>EL</th>
+                <th>EUPL</th>
+                <th>HL</th>
+                <th>ML</th>
+                <th>RL</th>
+                <th>UPL</th>
+                <th>LEWAT (MINIT)</th>
+                <th>LEWAT (MASA)</th>
+            </tr>
+           @if (Model.EA_Leav != null)
+           {
+            <tr>
+                <td>@Model.EA_Leav.Emp_no</td>
+                <td>@Model.EA_User.Users_Fname</td>
+                <td>@Model.EA_Leav.ABSs</td>
+                <td>@Model.EA_Leav.Casual</td>
+                <td>@Model.EA_Leav.EL</td>
+                <td>@Model.EA_Leav.EUPL</td>
+                <td>@Model.EA_Leav.HL</td>
+                <td>@Model.EA_Leav.ML</td>
+                <td>@Model.EA_Leav.RL</td>
+                <td>@Model.EA_Leav.UPL</td>
+                <td>@Model.EA_Leav.Late_Min</td>
+                <td>@Model.EA_Leav.Late_Time</td>
+            </tr>
+           }
+           else
+           {
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+           }
+        </table>
+    </div>
+}
+

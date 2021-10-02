@@ -1,0 +1,1208 @@
+﻿@model E_Appraisal.Models.All_Model
+@{     
+    if (string.IsNullOrEmpty(Session["Current"] as string))
+    {
+        Response.Redirect("~/Home/Index");
+    }
+
+    if(!string.IsNullOrEmpty(Session["Manager"] as string) || !string.IsNullOrEmpty(Session["hehehe"] as string))
+    {
+        if(!string.IsNullOrEmpty(Session["HR"] as string))
+        {
+            Layout = "~/Views/Shared/_LayoutHR.cshtml";
+        }
+        else
+        {
+            Layout = "~/Views/Shared/_LayoutManager.cshtml";
+        }
+    }
+}
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script> 
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<link href="~/Content/Form_Session.css" rel="stylesheet" />
+
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+
+<h2>Performance Review</h2>
+
+<input name="herm" value="@Session["Manager"].ToString()" hidden />
+
+<div class="tab" id="myHeader">
+  <h2 style="display:none">hehe</h2>
+  <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'Section 1')">Section 1</button>
+  <button id="opn2" class="tablinks" onclick="openCity(event, 'Section 2')">Section 2</button>
+  <button id="opn3" class="tablinks" onclick="openCity(event, 'Section 3')">Section 3</button>
+  <button id="opn4" class="tablinks" onclick="openCity(event, 'Section 4')">Section 4</button>
+  <button id="opn5" class="tablinks" onclick="openCity(event, 'Section 5')">Section 5</button>
+  <button id="opn6" class="tablinks" onclick="openCity(event, 'Section 6')">Section 6</button>
+</div>
+}
+else
+{
+    <h2>Penilaian Prestasi</h2>
+
+    <input name="herm" value="@Session["Manager"].ToString()" hidden />
+
+    <div class="tab" id="myHeader">
+        <h2 style="display:none">hehe</h2>
+        <button id="defaultOpen" class="tablinks" onclick="openCity(event, 'Section 1')">Bahagian 1</button>
+        <button id="opn2" class="tablinks" onclick="openCity(event, 'Section 2')">Bahagian 2</button>
+        <button id="opn3" class="tablinks" onclick="openCity(event, 'Section 3')">Bahagian 3</button>
+        <button id="opn4" class="tablinks" onclick="openCity(event, 'Section 4')">Bahagian 4</button>
+        <button id="opn5" class="tablinks" onclick="openCity(event, 'Section 5')">Bahagian 5</button>
+        <button id="opn6" class="tablinks" onclick="openCity(event, 'Section 6')">Bahagian 6</button>
+    </div>
+}
+
+@Html.Partial("~/Views/Section/Section_1.cshtml")
+
+@Html.Partial("~/Views/Section/Section_2.cshtml")
+
+@Html.Partial("~/Views/Section/Section_3.cshtml")
+
+@Html.Partial("~/Views/Section/Section_4.cshtml")
+
+@Html.Partial("~/Views/Section/Section_5.cshtml")
+
+@Html.Partial("~/Views/Section/Section_6.cshtml")
+
+
+<script src="~/Scripts/Score_Calculation.js"></script>
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        var Sec1_url = '@Url.Action("Section_1_Post", "Home", null, Request.Url.Scheme, null)';
+        var Sec2_url = '@Url.Action("Section_2_Post", "Home", null, Request.Url.Scheme, null)';
+        var Sec3_url = '@Url.Action("Section_3_Post", "Home", null, Request.Url.Scheme, null)';
+        var Sec4_url = '@Url.Action("Section_4_Post", "Home", null, Request.Url.Scheme, null)';
+        var Sec5_url = '@Url.Action("Section_5_Post", "Home", null, Request.Url.Scheme, null)';
+        var Sec6_url = '@Url.Action("Section_6_Post", "Home", null, Request.Url.Scheme, null)';
+    </script>
+
+    @if (!string.IsNullOrEmpty(Session["Manager"] as string))
+    {
+        <script>
+            $("input[name=option1]").attr('disabled', true);
+            $("input[name=option2]").attr('disabled', true);
+            $("input[name=option3]").attr('disabled', true);
+            $("input[name=option4]").attr('disabled', true);
+            $("input[name=option5]").attr('disabled', true);
+            $("input[name=option6]").attr('disabled', true);
+            $("input[name=option7]").attr('disabled', true);
+            $("input[name=sec2_emp_eval]").attr('disabled', true);
+            $("textarea[name=input_example1]").attr('disabled', true);
+            $("textarea[name=input_example2]").attr('disabled', true);
+            $("textarea[name=input_example3]").attr('disabled', true);
+            $("textarea[name=input_example4]").attr('disabled', true);
+            $("textarea[name=input_example5]").attr('disabled', true);
+            $("textarea[name=input_example6]").attr('disabled', true);
+            $("textarea[name=input_example7]").attr('disabled', true);
+            $("textarea[name=sec2_emp_eval]").attr('disabled', true);
+            $("input[id=txtEmp]").attr('disabled', true);
+        </script>
+
+        foreach (var value in Model.EA_Sec1)
+        {
+            if (value.Factor == "1")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option11_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option12_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option13_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option14_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option15_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action1]").val('@value.Actions');
+                    $('#total1').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "2")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option21_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option22_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option23_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option24_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option25_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action2]").val('@value.Actions');
+                    $('#total2').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "3")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option31_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option32_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option33_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option34_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option35_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action3]").val('@value.Actions');
+                    $('#total3').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "4")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option41_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option42_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option43_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option44_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option45_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action4]").val('@value.Actions');
+                    $('#total4').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "5")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option51_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option52_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option53_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option54_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option55_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action5]").val('@value.Actions');
+                    $('#total5').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "6")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option61_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option62_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option63_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option64_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option65_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action6]").val('@value.Actions');
+                    $('#total6').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "7")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option71_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option72_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option73_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option74_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option75_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action7]").val('@value.Actions');
+                    $('#total7').html(@value.Agreed_Score);
+                </script>
+            }
+        }
+
+        foreach (var value in Model.EA_Sec1)
+        {
+            if (value.Factor == "1")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option11]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option12]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option13]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option14]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option15]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example1]").val('@value.Support');
+                    $('#total1').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "2")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option21]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option22]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option23]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option24]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option25]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example2]").val('@value.Support');
+                    $('#total2').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "3")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option31]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option32]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option33]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option34]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option35]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example3]").val('@value.Support');
+
+                    $('#total3').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "4")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option41]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option42]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option43]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option44]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option45]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example4]").val('@value.Support');
+                    $('#total4').html(@value.Agreed_Score);
+
+                </script>
+            }
+            else if (value.Factor == "5")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option51]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option52]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option53]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option54]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option55]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example5]").val('@value.Support');
+                    $('#total5').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "6")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option61]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option62]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option63]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option64]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option65]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example6]").val('@value.Support');
+                    $('#total6').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "7")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option71]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option72]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option73]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option74]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option75]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example7]").val('@value.Support');
+                    $('#total7').html(@value.Agreed_Score);
+                </script>
+            }
+        }
+
+        foreach (var status in Model.EA_Sec6)
+        {
+            if (status.Man_check == 1)
+            {
+                <script>
+                    $("input").attr('disabled', true);
+                    $("textarea").attr('disabled', true);
+                </script>
+            }
+        }
+    }
+
+    else if (string.IsNullOrEmpty(Session["Manager"] as string))
+    {
+        <script>
+            $("input[name=option1_man]").attr('disabled', true);
+            $("input[name=option2_man]").attr('disabled', true);
+            $("input[name=option3_man]").attr('disabled', true);
+            $("input[name=option4_man]").attr('disabled', true);
+            $("input[name=option5_man]").attr('disabled', true);
+            $("input[name=option6_man]").attr('disabled', true);
+            $("input[name=option7_man]").attr('disabled', true);
+            $("input[name=chkman]").attr('disabled', true);
+            $("textarea[name=txtComMAN]").attr('disabled', true);
+            $("textarea[name=input_action1]").attr('disabled', true);
+            $("textarea[name=input_action2]").attr('disabled', true);
+            $("textarea[name=input_action3]").attr('disabled', true);
+            $("textarea[name=input_action4]").attr('disabled', true);
+            $("textarea[name=input_action5]").attr('disabled', true);
+            $("textarea[name=input_action6]").attr('disabled', true);
+            $("textarea[name=input_action7]").attr('disabled', true);
+            $("input[name=sec2_man_eval]").attr('disabled', true);
+            $("input[id=txtCountry]").attr('disabled', true);
+        </script>
+
+        foreach (var value in Model.EA_Sec1)
+        {
+            if (value.Factor == "1")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option11]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option12]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option13]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option14]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option15]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example1]").val('@value.Support');
+                    $('#total1').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "2")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option21]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option22]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option23]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option24]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option25]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example2]").val('@value.Support');
+                    $('#total2').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "3")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option31]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option32]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option33]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option34]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option35]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example3]").val('@value.Support');
+                    $('#total3').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "4")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option41]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option42]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option43]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option44]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option45]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example4]").val('@value.Support');
+                    $('#total4').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "5")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option51]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option52]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option53]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option54]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option55]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example5]").val('@value.Support');
+                    $('#total5').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "6")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option61]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option62]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option63]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option64]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option65]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example6]").val('@value.Support');
+                    $('#total6').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "7")
+            {
+                if (value.Emp_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option71]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option72]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option73]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option74]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Emp_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option75]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_example7]").val('@value.Support');
+                    $('#total7').html(@value.Agreed_Score);
+                </script>
+            }
+        }
+
+        foreach (var value in Model.EA_Sec1)
+        {
+            if (value.Factor == "1")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option11_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option12_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option13_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option14_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option15_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action1]").val('@value.Actions');
+                    $('#total1').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "2")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option21_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option22_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option23_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option24_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option25_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action2]").val('@value.Actions');
+                    $('#total2').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "3")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option31_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option32_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option33_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option34_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option35_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action3]").val('@value.Actions');
+                    $('#total3').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "4")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option41_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option42_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option43_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option44_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option45_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action4]").val('@value.Actions');
+                    $('#total4').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "5")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option51_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option52_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option53_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option54_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option55_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action5]").val('@value.Actions');
+                    $('#total5').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "6")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option61_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option62_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option63_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option64_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option65_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action6]").val('@value.Actions');
+                    $('#total6').html(@value.Agreed_Score);
+                </script>
+            }
+            else if (value.Factor == "7")
+            {
+                if (value.Man_Eval == "1")
+                {
+                    <script>
+                     $('input[id=option71_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "2")
+                {
+                    <script>
+                     $('input[id=option72_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "3")
+                {
+                    <script>
+                     $('input[id=option73_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "4")
+                {
+                    <script>
+                     $('input[id=option74_man]').attr('checked', true);
+                    </script>
+                }
+                else if (value.Man_Eval == "5")
+                {
+                    <script>
+                     $('input[id=option75_man]').attr('checked', true);
+                    </script>
+                }
+                <script>
+                    $("textarea[name=input_action7]").val('@value.Actions');
+                    $('#total7').html(@value.Agreed_Score);
+                </script>
+            }
+        }
+        foreach (var status in Model.EA_Sec6)
+        {
+            if (status.Emp_check == 1)
+            {
+                <script>
+                    $("input").attr('disabled', true);
+                    $("textarea").attr('disabled', true);
+                </script>
+            }
+        }
+    }
+
+    }
+
+

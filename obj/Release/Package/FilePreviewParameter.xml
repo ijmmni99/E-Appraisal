@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="MYBG-LT-060" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\mohamamo\\documents\\visual\ studio\ 2015\\Projects\\E-Appraisal\\E-Appraisal\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\mohamamo\\documents\\visual\ studio\ 2015\\Projects\\E-Appraisal\\E-Appraisal\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-E-Appraisal-20190702031048.mdf;Initial Catalog=aspnet-E-Appraisal-20190702031048;Integrated Security=True" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\mohamamo\\documents\\visual\ studio\ 2015\\Projects\\E-Appraisal\\E-Appraisal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="EDIEntities-Web.config Connection String" description="" value="metadata=res://*/Models.EA_Models.csdl|res://*/Models.EA_Models.ssdl|res://*/Models.EA_Models.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=MYBG-ISC-03;initial catalog=EDI;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\mohamamo\\documents\\visual\ studio\ 2015\\Projects\\E-Appraisal\\E-Appraisal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EDIEntities']/@connectionString" />
+  </parameter>
+  <parameter name="iScalaC1Entities-Web.config Connection String" description="" value="metadata=res://*/Models.Ruby.csdl|res://*/Models.Ruby.ssdl|res://*/Models.Ruby.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=MYBG-ISC-03;initial catalog=iScalaC1;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\mohamamo\\documents\\visual\ studio\ 2015\\Projects\\E-Appraisal\\E-Appraisal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='iScalaC1Entities']/@connectionString" />
+  </parameter>
+</parameters>

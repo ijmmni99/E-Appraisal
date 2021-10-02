@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="iScalaC1ModelStoreContainer" CdmEntityContainer="iScalaC1Entities">
+    <EntitySetMapping Name="Ruby_Emp">
+      <EntityTypeMapping TypeName="iScalaC1Model.Ruby_Emp">
+        <MappingFragment StoreEntitySet="Ruby_Emp">
+          <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+          <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Passkey" ColumnName="Passkey" />
+          <ScalarProperty Name="Barkey" ColumnName="Barkey" />
+          <ScalarProperty Name="Emp_Photo" ColumnName="Emp_Photo" />
+          <ScalarProperty Name="Printed" ColumnName="Printed" />
+          <ScalarProperty Name="FolkLift" ColumnName="FolkLift" />
+          <ScalarProperty Name="Rights" ColumnName="Rights" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="Skill_Level" ColumnName="Skill_Level" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ruby_Department_List">
+      <EntityTypeMapping TypeName="iScalaC1Model.Ruby_Department_List">
+        <MappingFragment StoreEntitySet="Ruby_Department_List">
+          <ScalarProperty Name="Depart_id" ColumnName="Depart_id" />
+          <ScalarProperty Name="Depart_Name" ColumnName="Depart_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

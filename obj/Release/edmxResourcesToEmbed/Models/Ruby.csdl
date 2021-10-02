@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="iScalaC1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Ruby_Emp">
+    <Key>
+      <PropertyRef Name="Emp_Code" />
+    </Key>
+    <Property Name="Emp_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Emp_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="Int32" />
+    <Property Name="Passkey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Barkey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Emp_Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Printed" Type="Byte" Nullable="false" />
+    <Property Name="FolkLift" Type="Byte" Nullable="false" />
+    <Property Name="Rights" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Admin" Type="Byte" Nullable="false" />
+    <Property Name="Skill_Level" Type="Byte" />
+  </EntityType>
+  <EntityType Name="Ruby_Department_List">
+    <Key>
+      <PropertyRef Name="Depart_id" />
+      <PropertyRef Name="Depart_Name" />
+    </Key>
+    <Property Name="Depart_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Depart_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="iScalaC1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Ruby_Emp" EntityType="Self.Ruby_Emp" />
+    <EntitySet Name="Ruby_Department_List" EntityType="Self.Ruby_Department_List" />
+  </EntityContainer>
+</Schema>

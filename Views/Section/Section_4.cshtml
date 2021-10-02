@@ -1,0 +1,145 @@
+﻿@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+<div id="Section 4" style="overflow-y:scroll;" class="tabcontent">
+    <h4>SECTION 4: LONG-TERM PERFORMANCE OBJECTIVES (1-5 YEARS)</h4>
+    <br />
+        <table border="0" cellpadding="5" width="100%">
+            <tr>
+                <td>Objective :<br /> <input type="text" class="form-control" id="ob2_input" /></td>
+                <td>Performance Standard :<br /> <input type="text" class="form-control" id="sd2_input" /></td>
+                <td> Peformance Measure :<br /> <input type="text" class="form-control" id="pm2_input" /></td>
+                <td><br /> <button class="btn-success" onclick="Add_Section_4()" id="btn_add">Add</button></td>
+            </tr>
+        </table>
+        <br />
+
+        <table class="tdd" id="ijm_tab" border="1" cellpadding="5" width="100%">
+            <thead>
+                <tr>
+                    <th width="30%"><b>Objectives/Goals</b></th>
+                    <th width="30%"><b>Performance Standard</b></th>
+                    <th width="30%"><b>Performance Measure</b></th>
+                    <th width="10%" style="border-top:hidden;border-right:hidden;border-bottom:hidden"></th>
+                </tr>
+                <tr>
+                    <td class="tdd">These are the 3-5 long-term objectives/goals which are relevant for the next 1-5 years</td>
+                    <td class="tdd">What are the standard and agreed actions for each objective/goal?</td>
+                    <td class="tdd">How will each objective/goal be measured?</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="display:none">
+                    <td class="tdd"><textarea name="txt4" rows="3" class="output form-control" id="secf_1" type="text"></textarea></td>
+                    <td class="tdd"><textarea name="txt4" rows="3" class="output form-control" id="secf_2" type="text"></textarea></td>
+                    <td class="tdd"><textarea name="txt4" rows="3" class="output form-control" id="secf_3" type="text"></textarea></td>
+                    <td><input class="btn-danger" type="button" value="Remove" onclick="Remove4(this)" /></td>
+                </tr>
+                @foreach (var data in Model.EA_Sec4)
+                {
+                    <tr>
+                        <td><textarea name="txt4" rows="3" style="width:100%" class="output form-control" id="secf_1">@data.Objective_sec4</textarea></td>
+                        <td><textarea name="txt4" rows="3" style="width:100%" class="output form-control" id="secf_2">@data.Standards_sec4</textarea></td>
+                        <td><textarea name="txt4" rows="3" style="width:100%" class="output form-control" id="secf_3">@data.Measure_sec4</textarea></td>
+                        <td><input class="btn-danger" type="button" value="Remove" onclick="Remove4(this)" /></td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+    <br />
+    <input style="margin-left:92.5%;width:70px" class="btn btn-primary" type="button" id="btnSave4" value="Save" />
+</div>
+}
+else
+{
+    <div id="Section 4" style="overflow-y:scroll;" class="tabcontent">
+        <h4>BAHAGIAN 4: OBJEKTIF PRESTASI BAGI JANGKA PANJANG (1-5 TAHUN)</h4>
+        <br />
+        <table border="0" cellpadding="5" width="100%">
+            <tr>
+                <td>Objektif/Matlamat :<br /> <input type="text" class="form-control" id="ob2_input" /></td>
+                <td>Piawaian Prestasi :<br /> <input type="text" class="form-control" id="sd2_input" /></td>
+                <td>Penilaian Prestasi :<br /> <input type="text" class="form-control" id="pm2_input" /></td>
+                <td><br /> <button class="btn-success" onclick="Add_Section_4()" id="btn_add">Tambah</button></td>
+            </tr>
+        </table>
+        <br />
+
+        <table class="tdd" id="ijm_tab" border="1" cellpadding="5" width="100%">
+            <thead>
+                <tr>
+                    <th width="30%"><b>Objektif/Matlamat</b></th>
+                    <th width="30%"><b>Piawaian Prestasi</b></th>
+                    <th width="30%"><b>Penilaian Prestasi</b></th>
+                    <th width="10%" style="border-top:hidden;border-right:hidden;border-bottom:hidden"></th>
+                </tr>
+                <tr>
+                    <td class="tdd">Ini adalah 3-5 objektif/matlamat jangka panjang yang relevan untuk 1-5 tahun akan datang</td>
+                    <td class="tdd">Apakah piawaian dan tindakan yang dipersetujui bagi setiap objektif / matlamat yang ditetapkan?</td>
+                    <td class="tdd">Bagaimana setiap objektif / matlamat akan diukur/dinilai?</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="display:none">
+                    <td class="tdd"><textarea rows="3" name="txt4" class="output form-control" id="secf_1" type="text"></textarea></td>
+                    <td class="tdd"><textarea rows="3" name="txt4" class="output form-control" id="secf_2" type="text"></textarea></td>
+                    <td class="tdd"><textarea rows="3" name="txt4" class="output form-control" id="secf_3" type="text"></textarea></td>
+                    <td><input class="btn-danger" type="button" value="Padam" onclick="Remove4(this)" /></td>
+                </tr>
+                @foreach (var data in Model.EA_Sec4)
+                {
+                    <tr>
+                        <td><textarea name="txt4" rows="3" style="width:100%" class="output form-control" id="secf_1">@data.Objective_sec4</textarea></td>
+                        <td><textarea name="txt4" rows="3" style="width:100%" class="output form-control" id="secf_2">@data.Standards_sec4</textarea></td>
+                        <td><textarea name="txt4" rows="3" style="width:100%" class="output form-control" id="secf_3">@data.Measure_sec4</textarea></td>
+                        <td><input class="btn-danger" type="button" value="Padam" onclick="Remove4(this)" /></td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+        <br />
+        <input style="margin-left:92.5%;width:70px" class="btn btn-primary" type="button" id="btnSave4" value="Simpan" />
+    </div>
+}
+
+<script>
+    var q = 4;
+    var y = 4;
+
+    function Add_Section_4() {
+
+        var table = document.getElementById("ijm_tab");
+        var rowCount = table.rows.length;
+        var row = table.insertRow(rowCount);
+        var colCount = table.rows[0].cells.length;
+        for(var i=0; i<colCount; i++) {
+            var newcell	= row.insertCell(i);
+            newcell.innerHTML = table.rows[2].cells[i].innerHTML;
+            switch (newcell.childNodes[0].name) {
+                    case "txt4":
+                        newcell.childNodes[0].id = "secf_" + y;
+                        newcell.childNodes[0].style = "width:100%"
+                        y++;
+
+                }
+            }
+
+        for (q; q < 70;) {
+            document.getElementById("secf_"+ q).value = document.getElementById("ob2_input").value;
+            q++;
+            document.getElementById("secf_" + q).value = document.getElementById("sd2_input").value;
+            q++;
+            document.getElementById("secf_" + q).value = document.getElementById("pm2_input").value;
+            q++;
+            break;
+        }
+        document.getElementById("ob2_input").value = "";
+        document.getElementById("sd2_input").value = "";
+        document.getElementById("pm2_input").value = "";
+        document.getElementById("ob2_input").focus();
+        
+     }
+
+
+</script>

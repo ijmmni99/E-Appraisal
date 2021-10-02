@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="iScalaC1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'iScalaC1.dbo.Ruby_Department_List' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Ruby_Department_List">
+          <Key>
+            <PropertyRef Name="Depart_id" />
+            <PropertyRef Name="Depart_Name" />
+          </Key>
+          <Property Name="Depart_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Depart_Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ruby_Emp">
+          <Key>
+            <PropertyRef Name="Emp_Code" />
+          </Key>
+          <Property Name="Emp_id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_Code" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Emp_Name" Type="varchar" MaxLength="250" />
+          <Property Name="Department" Type="int" />
+          <Property Name="Passkey" Type="varchar(max)" />
+          <Property Name="Barkey" Type="varchar" MaxLength="50" />
+          <Property Name="Emp_Photo" Type="varchar" MaxLength="250" />
+          <Property Name="Printed" Type="tinyint" Nullable="false" />
+          <Property Name="FolkLift" Type="tinyint" Nullable="false" />
+          <Property Name="Rights" Type="varchar" MaxLength="50" />
+          <Property Name="Admin" Type="tinyint" Nullable="false" />
+          <Property Name="Skill_Level" Type="tinyint" />
+        </EntityType>
+        <EntityContainer Name="iScalaC1ModelStoreContainer">
+          <EntitySet Name="Ruby_Emp" EntityType="Self.Ruby_Emp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ruby_Department_List" EntityType="Self.Ruby_Department_List" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Ruby_Department_List].[Depart_id] AS [Depart_id], 
+    [Ruby_Department_List].[Depart_Name] AS [Depart_Name]
+    FROM [dbo].[Ruby_Department_List] AS [Ruby_Department_List]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="iScalaC1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ruby_Emp">
+          <Key>
+            <PropertyRef Name="Emp_Code" />
+          </Key>
+          <Property Name="Emp_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Emp_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="Int32" />
+          <Property Name="Passkey" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Barkey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Emp_Photo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Printed" Type="Byte" Nullable="false" />
+          <Property Name="FolkLift" Type="Byte" Nullable="false" />
+          <Property Name="Rights" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Admin" Type="Byte" Nullable="false" />
+          <Property Name="Skill_Level" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Ruby_Department_List">
+          <Key>
+            <PropertyRef Name="Depart_id" />
+            <PropertyRef Name="Depart_Name" />
+          </Key>
+          <Property Name="Depart_id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Depart_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="iScalaC1Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ruby_Emp" EntityType="Self.Ruby_Emp" />
+          <EntitySet Name="Ruby_Department_List" EntityType="Self.Ruby_Department_List" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="iScalaC1ModelStoreContainer" CdmEntityContainer="iScalaC1Entities">
+          <EntitySetMapping Name="Ruby_Emp">
+            <EntityTypeMapping TypeName="iScalaC1Model.Ruby_Emp">
+              <MappingFragment StoreEntitySet="Ruby_Emp">
+                <ScalarProperty Name="Emp_id" ColumnName="Emp_id" />
+                <ScalarProperty Name="Emp_Code" ColumnName="Emp_Code" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Passkey" ColumnName="Passkey" />
+                <ScalarProperty Name="Barkey" ColumnName="Barkey" />
+                <ScalarProperty Name="Emp_Photo" ColumnName="Emp_Photo" />
+                <ScalarProperty Name="Printed" ColumnName="Printed" />
+                <ScalarProperty Name="FolkLift" ColumnName="FolkLift" />
+                <ScalarProperty Name="Rights" ColumnName="Rights" />
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+                <ScalarProperty Name="Skill_Level" ColumnName="Skill_Level" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ruby_Department_List">
+            <EntityTypeMapping TypeName="iScalaC1Model.Ruby_Department_List">
+              <MappingFragment StoreEntitySet="Ruby_Department_List">
+                <ScalarProperty Name="Depart_id" ColumnName="Depart_id" />
+                <ScalarProperty Name="Depart_Name" ColumnName="Depart_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

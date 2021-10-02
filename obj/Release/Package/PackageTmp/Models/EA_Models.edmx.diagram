@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0b0f54dc5c0446a5b7407612abd36458" Name="Diagram1">
+        <EntityTypeShape EntityType="EDIModel.EA_Instruction" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Leave" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Position" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Section_1" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Section_2" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Section_3" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Section_4" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Section_5" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Section_6" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EDIModel.EA_Users" Width="1.5" PointX="0.75" PointY="10" />
+        <AssociationConnector Association="EDIModel.FK__EA_Sectio__Emp_I__395884C4" />
+        <AssociationConnector Association="EDIModel.FK__EA_Sectio__Emp_I__09A971A2" />
+        <AssociationConnector Association="EDIModel.FK__EA_Sectio__Emp_I__0F624AF8" />
+        <AssociationConnector Association="EDIModel.FK__EA_Sectio__Emp_I__14270015" />
+        <AssociationConnector Association="EDIModel.FK__EA_Sectio__Emp_I__1BC821DD" />
+        <AssociationConnector Association="EDIModel.FK__EA_Sectio__Emp_I__2CF2ADDF" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

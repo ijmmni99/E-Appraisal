@@ -1,0 +1,119 @@
+﻿<style>.ss{text-align:left;width:100%; border:hidden}</style>
+@if ((!string.IsNullOrEmpty(Session["Bahasa"] as string) && Session["Bahasa"].ToString() == "1") || (string.IsNullOrEmpty(Session["Bahasa"] as string)))
+{
+<div id="Section 5" style="overflow-y:scroll;" class="tabcontent">
+    
+    <h4>SECTION 5: TRAINING AND CAREER DEVELOPMENT</h4><input style="margin-left:92.5%;margin-top:0px;width:70px" class="btn btn-primary" type="button" id="btnSaveSec5" value="Save" />
+    <div id="div5">
+        <label>TRAINING AND DEVELOPMENT NEEDS</label><br />
+        <table border="1" cellpadding="5" width="100%">
+            <col width="20%" />
+            <col width="40%" />
+            <col width="40%"
+            <tr>
+                <th rowspan="6">What further training (if any) is required over the ensuing 12 months for the employee in order for him/her to achieve the objectives?</th>
+                <th>Area for development</th>
+                <th>Expected outcome</th>
+            </tr>
+            @{
+                int a = 1;
+                var c = "";
+                var d = "";
+                foreach (var data in Model.EA_Sec5)
+                {
+                    a = a + 1;
+                    <tr>
+                        <td><input class="ss" value="@data.Area" type="text" id="sec5_area_@(a - 1)" placeholder="@(a - 1) ." /></td>
+                        <td><input class="ss" value="@data.Outcome" type="text" id="sec5_expect_@(a - 1)" placeholder="@(a - 1) ." /></td>
+                    </tr>
+                    c = data.Desire;
+                    d = data.Terms;
+
+                }
+
+                for (; a <= 5; a++)
+                {
+                    <tr>
+                        <td><input class="ss" type="text" id="sec5_area_@a" placeholder="@a ." /></td>
+                        <td><input class="ss" type="text" id="sec5_expect_@a" placeholder="@a ." /></td>
+                    </tr>
+                }
+            }
+        </table>
+        <br />
+        <label>TRANING AND CAREER DEVELOPMENT</label>
+        <br />
+        <table border="1" cellpadding="5" width="100%">
+            @{
+                <col width="20%" />
+                <col width="80%" />
+                <tr>
+                    <td>Desire for progress in current position? What sort of experience would benefit you in the next year?</td>
+                    <td><textarea rows="4" id="desire" style="width:100%; border:hidden">@c</textarea></td>
+                </tr>
+                <tr>
+                    <td>What are your longer term career development plans?</td>
+                    <td><textarea rows="4" id="career" style="width:100%; border:hidden">@d</textarea></td>
+                </tr>
+            }
+        </table><br />
+    </div>
+</div>
+}
+else
+{
+<div id="Section 5" style="overflow-y:scroll;" class="tabcontent">
+    
+    <h4>BAHAGIAN 5: LATIHAN DAN PEMBANGUNAN KERJAYA</h4><input style="margin-left:92.5%;margin-top:0px;width:70px" class="btn btn-primary" type="button" id="btnSaveSec5" value="Simpan" />
+    <label>KEPERLUAN LATIHAN DAN PEMBANGUNAN</label><br />
+    <table  border="1" cellpadding="5" width="100%">
+        <col width="20%" />
+        <col width="40%" />
+        <col width="40%"
+        <tr>
+            <th rowspan="6">Apakah latihan lanjutan (jika ada) diperlukan dalam tempoh 12 bulan yang akan datang bagi pekerja dalam usaha untuk beliau mencapai objektif?</th><th>Bahagian untuk Pembangunan</th><th>Hasil yang Dijangkakan</th>
+        </tr> 
+        @{ 
+            int a = 1;
+            var c = "";
+            var d = "";
+            foreach (var data in Model.EA_Sec5)
+            {
+                a = a + 1;
+                <tr>
+                <td><input class="ss" value="@data.Area" type="text" id="sec5_area_@(a - 1)" placeholder="@(a - 1) ." /></td>
+                <td><input class="ss" value="@data.Outcome" type="text" id="sec5_expect_@(a - 1)" placeholder="@(a - 1) ." /></td>
+                </tr>
+                c = data.Desire;
+                d = data.Terms;
+
+            }
+
+            for (; a <= 5; a++)
+            {
+                <tr>
+                    <td><input class="ss" type="text" id="sec5_area_@a" placeholder="@a ." /></td>
+                    <td><input class="ss" type="text" id="sec5_expect_@a" placeholder="@a ." /></td>
+                </tr>
+            }
+            }
+    </table>
+    <br />
+    <label>LATIHAN DAN PENGEMBANGAN KERJAYA</label>
+    <br />
+    <table border="1" cellpadding="5" width="100%">
+    @{ 
+        <col width="20%" />
+        <col width="80%" />
+        <tr>
+            <td>Ingin untuk berkembang dalam jawatan yang disandang semasa. Apakah jenis pengalaman yang akan memberi manfaat kepada anda pada tahun depan?</td>
+            <td><textarea rows="4" id="desire" style="width:100%; border:hidden">@c</textarea></td>
+        </tr>
+        <tr>
+            <td>Apakah pelan/rancangan kerjaya anda untuk jangka masa panjang?</td>
+            <td><textarea rows="4" id="career" style="width:100%; border:hidden">@d</textarea></td>
+        </tr>
+        }
+    </table><br />
+</div>
+}
